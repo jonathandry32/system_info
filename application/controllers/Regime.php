@@ -70,4 +70,16 @@ class Regime extends CI_Controller {
         redirect('Regime/listeRegime');
     }
 
+    public function details(){
+        $id= $this->input->post('idRegime');
+        $this->load->model('Regime_model');
+        $data['plats']=$this->Regime_model->getDetailsPlats($id);
+        $data['activites']=$this->Regime_model->getDetailsActivites($id);
+        $data['contents']='regime/detailsRegime';
+        $data['title']='YourDiet';
+		$data['description']='';
+		$data['keywords']='';
+        $this->load->view('template',$data);
+    }
+
 }
