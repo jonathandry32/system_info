@@ -48,7 +48,7 @@ class Objectif extends CI_Controller {
 		$data['title']='YourDiet';
 		$data['description']='';
 		$data['keywords']='';
-		$data['contents']='objectif/insertObjectif';
+		$data['contents']='objectif/insert';
 		$this->load->view('template',$data);
 	}
 

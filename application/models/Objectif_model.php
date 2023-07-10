@@ -18,6 +18,10 @@ class Objectif_model extends CI_Model
         return $results;
     }
     public function payer($joursAajouter,$valeur,$idRegime){
+        $this->load->model('Monnai_model');
+        if($this->Monnai_model->portefeuille()<$valeur){
+            redirect('Monnai/index');
+        }
         date_default_timezone_set('Europe/Moscow');
         $currentDateTime = date('Y-m-d H:i:s');
         $dateFin = date('Y-m-d', strtotime($currentDateTime . ' + ' . $joursAajouter . ' days'));
