@@ -105,7 +105,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link collapsed" data-bs-target="#etatf" data-bs-toggle="collapse" href="#">
-                      <i class="bi bi-person-plus"></i><span> Statistique </span><i class="bi bi-chevron-down ms-auto"></i>
+                      <i class="bi bi-bar-chart-line-fill"></i><span> Statistique </span><i class="bi bi-chevron-down ms-auto"></i>
                     </a>
                      <ul id="etatf" class="nav-content collapse " data-bs-parent="#sidebar-nav">   <li class="nav-item">
                          <li class="nav-item">
@@ -127,7 +127,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/profil"); ?>">
-                        <i class="bi bi-circle"></i><span> Profil </span>
+                        <i class="bi bi-house"></i><span> Profil </span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -138,13 +138,13 @@
 
                 <li class="nav-item">
                     <a class="nav-link collapsed"  href="<?php echo base_url("Monnai/index"); ?>">
-                        <i class="bi bi-circle"></i><span> Monnai </span>
+                        <i class="bi bi-cash-coin"></i><span> Monnai </span>
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="<?php echo base_url("Objectif/insert"); ?>">
-                        <i class="bi bi-house"></i>
+                        <i class="bi bi-person-plus"></i>
                         <span>Nouveau regime</span>
                     </a>
                 </li>
@@ -163,13 +163,13 @@
 
                 <li class="nav-item">
                     <a class="nav-link collapsed"  href="<?php echo base_url("Monnai/validation"); ?>">
-                        <i class="bi bi-circle"></i><span> Validation code </span>
+                        <i class="bi bi-envelope-exclamation"></i><span> Validation code </span>
                     </a>
                 </li>
                 
                 <li class="nav-item">
                     <a class="nav-link collapsed"  href="<?php echo base_url("Monnai/insertCodePage"); ?>">
-                        <i class="bi bi-circle"></i><span> Code </span>
+                        <i class="bi bi-currency-exchange"></i><span> Code </span>
                     </a>
                 </li>
                 
