@@ -30,10 +30,12 @@ class Objectif extends CI_Controller {
 	public function payer()
 	{
 		$this->load->model('Objectif_model');
+		$this->load->model('Regime_model');
 		$data['title']='YourDiet';
 		$data['description']='';
 		$data['keywords']='';
-		$this->Objectif_model->payer();
+		$regime=$this->Regime_model->getById($this->input->post('idRegime'));
+		$this->Objectif_model->payer($regime['duree'],$regime['prix']);
 		$data['contents']='objectif/insert';
 		$this->load->view('template',$data);
 	}

@@ -29,7 +29,7 @@
                                 <td><?php echo $list[$i]['montant']; ?></td>
                                 <td>
                                     <form action="<?php echo base_url('Monnai/valider');?>" method="post">
-                                        <input type="hidden" name="idcode" value="<?php echo $list[$i]['idCode']; ?>">
+                                        <input type="hidden" name="idCode" value="<?php echo $list[$i]['idCode']; ?>">
                                         <input type="hidden" name="montant" value="<?php echo $list[$i]['montant']; ?>">
                                         <button type="submit" class="btn btn-primary" style="color:white">Valider</button>
                                     </form>
