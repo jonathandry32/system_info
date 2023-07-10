@@ -144,9 +144,9 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="<?php echo base_url("Pages/toPdf"); ?>">
+                    <a class="nav-link collapsed" href="<?php echo base_url("Objectif/insert"); ?>">
                         <i class="bi bi-house"></i>
-                        <span>PDF</span>
+                        <span>Nouveau regime</span>
                     </a>
                 </li>
                 <li class="nav-heading">Admin</li>
