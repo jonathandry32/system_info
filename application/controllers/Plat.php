@@ -47,4 +47,41 @@ class Plat extends CI_Controller {
         $this->Plat_model->deletePlat($id);
         redirect('Plat/listePlat');
     }
+
+    public function insertPlatPage()
+    {
+        $this->load->model('Plat_model');
+        $data['contents']='plat/insertPlat';
+        $data['title']='YourDiet';
+		$data['description']='';
+		$data['keywords']='';
+        $data['typePlat']=$this->Plat_model->getTypePlat();
+        $this->load->view('template',$data);
+    }
+
+    public function insertPlat()
+    {
+        $this->load->model('Plat_model');
+        $nom = $this->input->post('nom');
+        $idTypePlat = $this->input->post('idTypePlat');
+        $prix = $this->input->post('prix');
+        if (!empty($_FILES['image']['name']))
+        {
+            // Set preference
+            $config['upload_path'] = 'img/';
+            $config['allowed_types'] = 'jpg|jpeg|png|JPG|JPEG|PNG';
+            $config['file_name'] = $_FILES['image']['name'];
+            $config['max_size'] = '30000';
+            // Load upload library
+            $this->load->library('upload', $config);
+            // File upload
+            try{
+                $this->upload->do_upload('image');
+            }
+            catch(Exception $exp)
+            {}
+        }
+        $this->Plat_model->insertPlat($nom,$idTypePlat,$prix,$_FILES['image']['name']);
+        redirect(site_url('Plat/listePlat'));
+    }
 }
