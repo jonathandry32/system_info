@@ -75,12 +75,12 @@ $query_builder = TRUE;
 $db['default']['db_debug'] = FALSE;
 $db['default'] = array(
 	'dsn'	=> '',
+	'port' => '3306',
 	'hostname' => 'localhost',
-	'port' => '5432',
-	'username' => 'postgres',
+	'username' => 'root',
 	'password' => 'root',
-	'database' => 'vegmarket',
-	'dbdriver' => 'postgre',
+	'database' => 'system_info',
+	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),

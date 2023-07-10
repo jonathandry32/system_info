@@ -23,8 +23,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/vegmarket/';
-
+$config['base_url'] = 'http://localhost/system_info/';
+//$config['base_url'] = 'http://jr32.epizy.com/system_info/';
 /*
 |--------------------------------------------------------------------------
 | Index File
