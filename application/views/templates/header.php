@@ -182,7 +182,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/profil"); ?>">
+                    <a class="nav-link collapsed"  href="<?php echo base_url("Parametre/index"); ?>">
                         <i class="bi bi-circle"></i><span> Parametre </span>
                     </a>
                 </li>

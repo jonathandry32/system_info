@@ -14,5 +14,26 @@
             $results = $query->result_array();
             return $results;
         }
+
+        public function insert($nom)
+        {
+            $requete=array('nom'=>$nom);
+            $this->db->insert('parametre',$requete);
+        }
+
+        public function update($idParametre,$nom)
+        {
+            $data=array(
+                'nom'=>$nom
+            );
+            $this->db->where('idParametre',$idParametre);
+            $this->db->update('parametre',$data);
+        }
+
+        public function delete($idParametre)
+        {
+            $this->db->where('idParametre',$idParametre);
+            $this->db->delete('parametre');
+        }
     }
 ?>
