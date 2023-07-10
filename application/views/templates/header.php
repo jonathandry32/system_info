@@ -167,14 +167,38 @@
                      </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/profil"); ?>">
-                        <i class="bi bi-circle"></i><span> Plat </span>
+                    <a class="nav-link collapsed" data-bs-target="#plat" data-bs-toggle="collapse" href="#">
+                      <i class="bi bi-circle"></i><span> Plat </span><i class="bi bi-chevron-down ms-auto"></i>
                     </a>
+                     <ul id="plat" class="nav-content collapse " data-bs-parent="#sidebar-nav">   <li class="nav-item">
+                         <li class="nav-item">
+                             <a class="nav-link collapsed"  href="<?php echo base_url("Plat/listePlat"); ?>">
+                                 <i class="bi bi-circle"></i><span> Insertion </span>
+                             </a>
+                         </li>
+                        <li>
+                        <a class="nav-link collapsed"  href="<?php echo base_url("Plat/listePlat"); ?>">
+                            <i class="bi bi-circle"></i><span> Liste </span>
+                        </a>
+                        </li>
+                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/profil"); ?>">
-                        <i class="bi bi-circle"></i><span> Activite </span>
+                    <a class="nav-link collapsed" data-bs-target="#activite" data-bs-toggle="collapse" href="#">
+                      <i class="bi bi-circle"></i><span> Activite </span><i class="bi bi-chevron-down ms-auto"></i>
                     </a>
+                     <ul id="activite" class="nav-content collapse " data-bs-parent="#sidebar-nav">   <li class="nav-item">
+                         <li class="nav-item">
+                             <a class="nav-link collapsed"  href="<?php echo base_url("Activite/loadActivite"); ?>">
+                                 <i class="bi bi-circle"></i><span> Insertion </span>
+                             </a>
+                         </li>
+                        <li>
+                        <a class="nav-link collapsed"  href="<?php echo base_url("Activite/listeActivite"); ?>">
+                            <i class="bi bi-circle"></i><span> Liste </span>
+                        </a>
+                        </li>
+                     </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/profil"); ?>">

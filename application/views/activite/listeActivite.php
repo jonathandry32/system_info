@@ -10,8 +10,9 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col">Regime</th>
-                <th scope="col">Duree</th>
+                <th scope="col">Activite</th>
+                <th scope="col">Quantite</th>
+                <th scope="col">Unite</th>
                 <th scope="col">Modifier</th>
                 <th scope="col">Supprimer</th>
             </tr>
@@ -21,20 +22,21 @@
             for ($i = 0; $i < count($list); $i++) {
             ?>
                 <tr>
-                    <td><?php echo $list[$i]['nom']; ?></td>
-                    <td><?php echo $list[$i]['duree']; ?></td>
+                    <td><?php echo $list[$i]['act']; ?></td>
+                    <td><?php echo $list[$i]['quantite']; ?></td>:
+                    <td><?php echo $list[$i]['unite']; ?></td>
                     <td>
-                        <form action="<?php echo base_url('Regime/updatePage'); ?>" method="post">
-                            <input type="hidden" name="idRegime" value="<?php echo $list[$i]['idRegime']; ?>">
-                            <input type="hidden" name="nom" value="<?php echo $list[$i]['nom']; ?>">
-                            <input type="hidden" name="duree" value="<?php echo $list[$i]['duree']; ?>">
-                            <input type="hidden" name="prix" value="<?php echo $list[$i]['prix']; ?>">
+                        <form action="<?php echo base_url('Activite/updatePage'); ?>" method="post">
+                            <input type="hidden" name="idActivite" value="<?php echo $list[$i]['idActivite']; ?>">
+                            <input type="hidden" name="nom" value="<?php echo $list[$i]['act']; ?>">
+                            <input type="hidden" name="quantite" value="<?php echo $list[$i]['quantite']; ?>">
+                            <input type="hidden" name="unite" value="<?php echo $list[$i]['unite']; ?>">
                             <button type="submit" class="btn btn-success" style="color:white"><i class="bi bi-pencil-square"></i></button>
                         </form>
                     </td>
                     <td>
-                        <form action="<?php echo base_url('Regime/delete'); ?>" method="post">
-                            <input type="hidden" name="idRegime" value="<?php echo $list[$i]['idRegime']; ?>">
+                        <form action="<?php echo base_url('Activite/delete'); ?>" method="post">
+                            <input type="hidden" name="idActivite" value="<?php echo $list[$i]['idActivite']; ?>">
                             <button type="submit" class="btn btn-danger" style="color:white"><i class="bi bi-trash-fill"></i></button>
                         </form>
                     </td>
