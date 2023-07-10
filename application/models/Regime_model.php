@@ -72,5 +72,10 @@ class Regime_model extends CI_Model
         return $data;
     }
 
-
+    public function getById($idRegime){
+        $sql='SELECT * FROM regime where idRegime='.$idRegime;
+        $sql=$this->db->query($sql);
+        $result=$sql->row_array();
+        return $result;
+    }
 }

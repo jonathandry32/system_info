@@ -13,15 +13,17 @@
                     <table class="table">
                         <tr>
                                 <th scope="col">Nom</th>
-                                <th>Payer</th>
+                                <th scope="col">Prix</th>
+                                <th scope="col">Payer</th>
                         </tr>
                         <?php for($i=0;$i<count($resultat);$i++){ ?>
                             <tr>
                                 <td><?php echo $resultat[$i]['nom']; ?></td>
+                                <td><?php echo $resultat[$i]['prix']; ?></td>
                                 <td>
                                     <form action="<?php echo base_url('objectif/payer');?>" method="post">
-                                        <input type="hidden" name="idParametre" value="<?php echo $resultat[$i]['idRegime']; ?>">
-                                        <button type="submit" class="btn btn-primary" style="color:white"><?php echo $resultat[$i]['prix']; ?></button>
+                                        <input type="hidden" name="idRegime" value="<?php echo $resultat[$i]['idRegime']; ?>">
+                                        <button type="submit" class="btn btn-primary" style="color:white">Choisir</button>
                                     </form>
                                 </td>
                             </tr>
