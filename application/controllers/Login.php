@@ -45,9 +45,11 @@ class Login extends CI_Controller {
 
     public function sign()
     {
+        $this->load->model('Login_model');
 		$data['title']='YourDiet';
 		$data['description']='';
 		$data['keywords']='';
+        $data['genre']=$this->Login_model->getGenre();
 		$this->load->view('utilisateur/signin',$data);
 	}
 
