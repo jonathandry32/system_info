@@ -34,27 +34,27 @@
                 </br>
                 <div style="text-align:left;margin-left:40%;">
                 <div class="field">
-                    <span> Nom d'utilisateur : </span> anarana
+                    <span> Nom d'utilisateur : </span> <?php echo $profil['username'] ; ?>
                 </div> 
                 </br>
                 <div class="field">
-                    <span> Contact : </span> contact
+                    <span> Contact : </span> <?php echo $profil['numero'] ; ?>
                 </div> 
                 </br>
                 <div class="field">
-                    <span> Adresse : </span> adresse
+                    <span> Adresse : </span> <?php echo $profil['adresse'] ; ?>
                 </div> 
                 </br>
                 <div class="field">
-                    <span> Date de naissance : </span> date
+                    <span> Date de naissance : </span> <?php echo $profil['dtn'] ; ?>
                 </div> 
                 </br>
                 <div class="field">
-                    <span> Poids : </span> 50 kg
+                    <span> Poids : </span> <?php echo $profil['taille'] ; ?> kg
                 </div> 
                 </br>
                 <div class="field">
-                    <span> Taille : </span> 150 cm
+                    <span> Taille : </span> <?php echo $profil['poids'] ; ?> cm
                 </div> 
                 </br>
                   <div class="col-12">

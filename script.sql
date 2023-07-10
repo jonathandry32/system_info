@@ -81,6 +81,12 @@ create table detail_regime(
 	foreign key (idRegime) references regime(idRegime)
 );
 
+insert into detail_regime(idRegime,idPlat,idActivite) values (1,1,0);
+insert into detail_regime(idRegime,idPlat,idActivite) values (1,2,0);
+insert into detail_regime(idRegime,idPlat,idActivite) values (1,0,1);
+insert into detail_regime(idRegime,idPlat,idActivite) values (1,0,2);
+insert into detail_regime(idRegime,idPlat,idActivite) values (1,0,3);
+
 create table type_plat(
     idTypePlat int auto_increment primary key,
     nom varchar(50)
@@ -94,6 +100,9 @@ create table cat_plat(
     idCatPlat int auto_increment primary key,
     nom varchar(50)
 );
+
+insert into cat_plat(nom) values('Sucré');
+insert into cat_plat(nom) values('Salé');
 
 create table plat(
     idPlat int auto_increment primary key,
@@ -115,6 +124,11 @@ create table detail_plat(
 	foreign key (idPlat) references plat(idPlat),
 	foreign key (idCatPlat) references cat_plat(idCatPlat)
 );
+
+insert into detail_plat(idPlat,idCatPlat) values (1,2);
+insert into detail_plat(idPlat,idCatPlat) values (2,1);
+insert into detail_plat(idPlat,idCatPlat) values (3,2);
+insert into detail_plat(idPlat,idCatPlat) values (4,1);
 
 create table objectif_utilisateur(
     idObjectif int auto_increment primary key,

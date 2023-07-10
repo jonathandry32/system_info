@@ -177,7 +177,7 @@
                     </a>
                      <ul id="plat" class="nav-content collapse " data-bs-parent="#sidebar-nav">   <li class="nav-item">
                          <li class="nav-item">
-                             <a class="nav-link collapsed"  href="<?php echo base_url("Plat/listePlat"); ?>">
+                             <a class="nav-link collapsed"  href="<?php echo base_url("Plat/insertPlatPage"); ?>">
                                  <i class="bi bi-circle"></i><span> Insertion </span>
                              </a>
                          </li>
