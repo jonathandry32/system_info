@@ -90,7 +90,7 @@
                       </div>
                   </div>
 
-                <div class="col-6">
+                <div class="col-12">
                   <button class="btn btn-primary w-100 " type="submit">Ajouter</button>
                 </div>
               </form>
