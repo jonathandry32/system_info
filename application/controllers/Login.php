@@ -12,7 +12,7 @@ class Login extends CI_Controller {
 		//	on charge la page dans le template
 		if($this->session->userdata('online'))
         {
-            $this->load->view('utilisateur/after_login',$data);
+            $this->load->view('utilisateur/profil',$data);
 		}
 		else{
 			$this->load->view('utilisateur/login',$data);
@@ -32,7 +32,7 @@ class Login extends CI_Controller {
             $data['keywords']='';
 
             //	on charge la view qui contient le corps de la page
-            $data['contents']='utilisateur/after_login';
+            $data['contents']='utilisateur/profil';
 
             //	on charge la page dans le template
             $this->load->view('template',$data);
