@@ -32,4 +32,18 @@ class Plat_model extends CI_Model
         }
         return $data;
     }
+
+    public function insertPlat($nom,$idTypePlat,$prix,$picture)
+    {
+        $requete=array('nom'=>$nom,'idTypePlat'=>$idTypePlat,'prix'=>$prix,'picture'=>$picture);
+        $this->db->insert('plat',$requete);
+    }
+
+    public function getTypePlat()
+    {   
+        $sql="select*from type_plat";
+        $query=$this->db->query($sql);
+        $results = $query->result_array();
+        return $results;
+    }
 }
