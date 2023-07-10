@@ -121,13 +121,13 @@
                              </a>
                          </li>
                         <li>
-                        <a class="nav-link collapsed"  href="<?php echo base_url("Statistique/corps"); ?>">
-                            <i class="bi bi-circle"></i><span> Corps </span>
+                        <a class="nav-link collapsed"  href="<?php echo base_url("Statistique/poids"); ?>">
+                            <i class="bi bi-circle"></i><span> Poids </span>
                         </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link collapsed"  href="<?php echo base_url("Statistique/financiere"); ?>">
-                                <i class="bi bi-circle"></i><span> Financière </span>
+                            <a class="nav-link collapsed"  href="<?php echo base_url("Statistique/finance"); ?>">
+                                <i class="bi bi-circle"></i><span> Finance </span>
                             </a>
                         </li>
                      </ul>
@@ -138,15 +138,20 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/controle"); ?>">
+                        <i class="bi bi-circle"></i><span> Contrôle </span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/profil"); ?>">
                         <i class="bi bi-circle"></i><span> Code </span>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="<?php echo base_url("Pages/toPdf"); ?>">
+                    <a class="nav-link collapsed" href="<?php echo base_url("Objectif/insert"); ?>">
                         <i class="bi bi-house"></i>
-                        <span>PDF</span>
+                        <span>Nouveau regime</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -201,7 +206,7 @@
                      </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/profil"); ?>">
+                    <a class="nav-link collapsed"  href="<?php echo base_url("Parametre/index"); ?>">
                         <i class="bi bi-circle"></i><span> Parametre </span>
                     </a>
                 </li>
