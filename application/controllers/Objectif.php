@@ -54,6 +54,16 @@ class Objectif extends CI_Controller {
 
 	public function insertObjectif(){
 		$objectif = $this->input->post('objectif');
+		$minvaleur= $this->input->post('minvaleur');
+		$maxvaleur= $this->input->post('maxvaleur');
+		$poidsmin= $this->input->post('poidsmin');
+		$poidsmax= $this->input->post('poidsmax');
+		$taillemin= $this->input->post('taillemin');
+		$taillemax= $this->input->post('taillemax');
+		$regime = $this->input->post('regime');
+		$this->load->model('Objectif_model');
+		$this->Objectif_model->insertObjectif($objectif,$minvaleur,$maxvaleur,$poidsmin,$poidsmax,$taillemin,$taillemax,$regime);
+		redirect('Objectif/insertPage');
 	}
 }
 ?>

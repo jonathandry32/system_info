@@ -32,10 +32,11 @@ class Login extends CI_Controller {
             $data['keywords']='';
 
             //	on charge la view qui contient le corps de la page
-            $data['contents']='utilisateur/profil';
+            //$data['contents']='utilisateur/profil';
 
             //	on charge la page dans le template
-            $this->load->view('template',$data);
+           // $this->load->view('template',$data);
+           redirect('Utilisateur/profil');
         }
         else
         {
