@@ -11,4 +11,12 @@ class Utilisateur extends CI_Controller {
 		$data['contents']='utilisateur/profil';
         $this->load->view('template',$data);
 	}
+    public function controle()
+    {
+		$data['title']='YourDiet';
+		$data['description']='';
+		$data['keywords']='';
+		$data['contents']='utilisateur/controle';
+        $this->load->view('template',$data);
+	}
 }
