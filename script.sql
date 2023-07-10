@@ -104,6 +104,11 @@ create table plat(
 	foreign key (idTypePlat) references type_plat(idTypePlat)
 );
 
+insert into plat(nom,idTypePlat,prix) values ('salade',2,12000);
+insert into plat(nom,idTypePlat,prix) values ('croissant',1,3000);
+insert into plat(nom,idTypePlat,prix) values ('soupe',4,15000);
+insert into plat(nom,idTypePlat,prix) values ('brownies',3,6000);
+
 create table detail_plat(
     idPlat int,
     idCatPlat int,

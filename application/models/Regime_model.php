@@ -3,10 +3,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Regime_model extends CI_Model
 {
-    public function insertRegime($nom,$duree,$prix){
+    public function insertRegime($nom,$duree,$prix,$plats,$activites){
         $sql="INSERT INTO regime(nom,duree,prix) values (%s,%d,%d)";
         $sql=sprintf($sql,$this->db->escape($nom),$duree,$prix);
         $this->db->query($sql);
+        $idRegime = $this->db->insert_id();
+        for($i=0; $i<count($plats);$i++){
+            $query1='INSERT INTO detail_regime(idRegime,idPlat,idActivite) values(%d,%d,0)';
+            $query1=sprintf($query1,$idRegime,$plats[$i]);
+            $this->db->query($query1);
+        }
+        for($i=0; $i<count($activites); $i++){
+            $query2='INSERT INTO detail_regime(idRegime,idPlat,idActivite) values(%d,0,%d)';
+            $query2=sprintf($query2,$idRegime,$activites[$i]);
+            $this->db->query($query2);
+        }
     }
 
     public function listeRegime(){

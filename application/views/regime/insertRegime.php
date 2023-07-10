@@ -34,23 +34,38 @@
                     <div class="invalid-feedback">Prix obligatoire!</div>
                 </div>
             </div> 
+            </br>
             <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Plats à ajouter</label>
+                <label class="col-sm-3 col-form-label">Ajouter des plats</label>
                 <?php for($i=0; $i<count($plats); $i++){ ?>
                     <div class="col-sm-9">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="plat" id="plat">
+                            <input class="form-check-input" type="checkbox" name="plat[]" id="plat<?php echo $i; ?>" value="<?php echo $plats[$i]['idPlat']; ?>">
                                 <label class="form-check-label" for="plat">
                                     <?php echo $plats[$i]['plat']; ?>
                                     <?php echo $plats[$i]['types']; ?>
                                     <?php echo $plats[$i]['prix']; ?>
-                                    <?php echo $plats[$i]['picture']; ?>
                                 </label>
                         </div>
                     </div>
                <?php } ?>            
             </div>           
-                            <br>          
+            <br>   
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Ajouter des activités</label>
+                <?php for($i=0; $i<count($activites); $i++){ ?>
+                    <div class="col-sm-9">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="activite[]" id="activite<?php echo $i; ?>" value="<?php echo $activites[$i]['idActivite']; ?>">
+                                <label class="form-check-label" for="activite">
+                                    <?php echo $activites[$i]['act']; ?>
+                                    <?php echo $activites[$i]['quantite']; ?>
+                                    <?php echo $activites[$i]['unite']; ?>
+                                </label>
+                        </div>
+                    </div>
+               <?php } ?>            
+            </div>          
             <br>
             <center><button type="submit" class="btn btn-primary" >Ajouter</button></center>
             <hr>
