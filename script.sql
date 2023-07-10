@@ -53,16 +53,26 @@ insert into regime(nom,duree) values('Startup',7);
 insert into regime(nom,duree) values('Basique',14);
 insert into regime(nom,duree) values('Rapide',30);
 
-create table activite(
-    idActivite int auto_increment primary key,
+create table unite(
+    idUnite int auto_increment primary key,
     nom varchar(50)
 );
-insert into activite(nom) values('Corde a saute');
-insert into activite(nom) values('Footing');
-insert into activite(nom) values('Yoga');
-insert into activite(nom) values('Pompe');
-insert into activite(nom) values('Abdo');
-insert into activite(nom) values('Squat');
+insert into unite(nom) values('Minutes');
+insert into unite(nom) values('Quantites');
+
+create table activite(
+    idActivite int auto_increment primary key,
+    nom varchar(50),
+    quantite double,
+    unite int,
+	foreign key (idUnite) references unite(idUnite)
+);
+insert into activite(nom,quantite,unite) values('Corde a saute',10,1);
+insert into activite(nom,quantite,unite) values('Footing',30,1);
+insert into activite(nom,quantite,unite) values('Yoga',15,1);
+insert into activite(nom,quantite,unite) values('Pompe',50,2);
+insert into activite(nom,quantite,unite) values('Abdo',50,2);
+insert into activite(nom,quantite,unite) values('Squat',50,2);
 
 create table detail_regime(
     idRegime int,
@@ -104,5 +114,19 @@ create table regime_utilisateur(
     idObjectif int,
     debut Date,
     fin Date,
+	foreign key (idUtilisateur) references utilisateur(idUtilisateur)
+);
+
+create table code(
+    code varchar(10),
+    valeur double
+);
+
+create table caisse(
+    idCaisse int auto_increment primary key,
+    idUtilisateur int,
+    valeur int,
+    types varchar(10),
+    daty Date,
 	foreign key (idUtilisateur) references utilisateur(idUtilisateur)
 );
