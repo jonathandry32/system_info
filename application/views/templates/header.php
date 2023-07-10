@@ -143,7 +143,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/profil"); ?>">
+                    <a class="nav-link collapsed"  href="<?php echo base_url("Monnai/insertCodePage"); ?>">
                         <i class="bi bi-circle"></i><span> Code </span>
                     </a>
                 </li>

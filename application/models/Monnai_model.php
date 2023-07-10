@@ -46,5 +46,11 @@
             }
             return $result;
         }
+
+        public function insertCode($code,$valeur,$utilisable)
+        {
+            $requete=array('code'=>$code,'valeur'=>$valeur,'utilisable'=>$utilisable);
+            $this->db->insert('code',$requete);
+        }
     }
 ?>
