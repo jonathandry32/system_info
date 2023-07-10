@@ -37,7 +37,7 @@
                   </p>
                 </div>
 
-                <form id="login" class="row g-3 needs-validation" method="post" action="<?php echo site_url("Login/inscription"); ?>">
+                <form id="login" class="row g-3 needs-validation" action="<?php echo site_url("Login/inscription"); ?>"  method="post">
                   
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-3 col-form-label">Adresse mail</label>
@@ -122,3 +122,4 @@
 
   </div>
 </main><!-- End #main -->
+  <script src="assets/vendor/php-email-form/validate.js"></script>

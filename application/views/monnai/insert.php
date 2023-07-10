@@ -21,17 +21,19 @@
                 <div class="pt-4 pb-3">
                   <h5 class="card-title text-center pb-0 fs-4">Insertion de code</h5>
                 </div>
-                <form id="login" class="row g-3 needs-validation" method="post" action="<?php echo base_url();?>monnai/insertCode">
+                <form id="login" class="row g-3 needs-validation" method="post" action="<?php echo base_url();?>monnai/insertCode" novalidate>
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-3 col-form-label">code</label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" name="code">
+                      <input type="text" class="form-control" name="code" required>
+                      <div class="invalid-feedback">Code obligatoire!</div>
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-3 col-form-label">valeur</label>
                     <div class="col-sm-9">
-                      <input type="number" class="form-control" name="valeur">
+                      <input type="number" class="form-control" name="valeur" required>
+                      <div class="invalid-feedback">Valeur obligatoire!</div>
                     </div>
                   </div>
                   <div class="row mb-3">

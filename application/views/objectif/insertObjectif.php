@@ -14,7 +14,7 @@
                   <h5 class="card-title text-center pb-0 fs-4">Inserer un nouvel objectif</h5>
                 </div>
 
-                <form id="login" class="row g-3 needs-validation" method="post" action="<?php echo site_url("Objectif/insertObjectif"); ?>">
+                <form id="login" class="row g-3 needs-validation" method="post" action="<?php echo site_url("Objectif/insertObjectif"); ?>" novalidate>
                   
                 <div class="row mb-3">
                       <label class="col-sm-3 col-form-label"> Objectif </label>
@@ -36,6 +36,7 @@
                     <label for="inputNumber" class="col-sm-3 col-form-label">Poids minimum souhaité</label>
                     <div class="col-sm-9">
                       <input type="number" class="form-control" name="minvaleur" required>
+                      <div class="invalid-feedback">Poids minimum souhaité obligatoire!</div>
                     </div>
                   </div>
 
@@ -43,6 +44,7 @@
                     <label for="inputNumber" class="col-sm-3 col-form-label">Poids maximum souhaité</label>
                     <div class="col-sm-9">
                       <input type="number" class="form-control" name="maxvaleur" required>
+                      <div class="invalid-feedback">Poids maximum souhaité obligatoire!</div>
                     </div>
                   </div>
 
@@ -50,6 +52,7 @@
                     <label for="inputNumber" class="col-sm-3 col-form-label">Poids minimum recquis</label>
                     <div class="col-sm-9">
                       <input type="number" class="form-control" name="poidsmin" required>
+                      <div class="invalid-feedback">Poids minimum recquis obligatoire!</div>
                     </div>
                   </div>
         
@@ -57,6 +60,7 @@
                     <label for="inputNumber" class="col-sm-3 col-form-label">Poids maximum recquis</label>
                     <div class="col-sm-9">
                       <input type="number" class="form-control" name="poidsmax" required>
+                      <div class="invalid-feedback">Poids maximum recquis obligatoire!</div>
                     </div>
                   </div>
 
@@ -64,6 +68,7 @@
                     <label for="inputNumber" class="col-sm-3 col-form-label">Taille minimum recquis</label>
                     <div class="col-sm-9">
                       <input type="number" class="form-control" name="taillemin" required>
+                      <div class="invalid-feedback">Taille minimum recquis obligatoire!</div>
                     </div>
                   </div>
 
@@ -71,6 +76,7 @@
                     <label for="inputNumber" class="col-sm-3 col-form-label">Taille maximum recquis</label>
                     <div class="col-sm-9">
                       <input type="number" class="form-control" name="taillemax" required>
+                      <div class="invalid-feedback">Taille maximum recquis obligatoire!</div>
                     </div>
                   </div>
 

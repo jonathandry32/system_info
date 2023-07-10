@@ -23,11 +23,12 @@
                   <h5 class="card-title text-center pb-0 fs-4">Insertion de parametre</h5>
                 </div>
 
-                <form id="login" class="row g-3 needs-validation" method="post" action="<?php echo base_url();?>parametre/insert">
+                <form id="login" class="row g-3 needs-validation" method="post" action="<?php echo base_url();?>parametre/insert" novalidate>
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-3 col-form-label">nom</label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" name="nom">
+                      <input type="text" class="form-control" name="nom" required>
+                        <div class="invalid-feedback">Nom obligatoire!</div>
                     </div>
                   </div>
 
