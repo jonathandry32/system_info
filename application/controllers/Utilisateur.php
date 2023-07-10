@@ -5,6 +5,11 @@ class Utilisateur extends CI_Controller {
 
     public function profil()
     {
+        $id= $this->input->post('idRegime');
+        $this->load->model('Regime_model');
+		$id=$this->Regime_model->getActualId();
+        $data['plats']=$this->Regime_model->getDetailsPlats($id);
+        $data['activites']=$this->Regime_model->getDetailsActivites($id);
 		$data['title']='YourDiet';
 		$data['description']='';
 		$data['keywords']='';

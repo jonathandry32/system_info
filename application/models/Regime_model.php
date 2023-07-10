@@ -62,6 +62,15 @@ class Regime_model extends CI_Model
         }
         return $data;
     }
+    
+    public function getActualId(){
+        $query= $this->db->query('SELECT idRegime FROM regime_utilisateur where idUtilisateur='.$this->session->userdata('online'));
+        $data=array();
+        foreach($query->result_array() as $row){
+            array_push($data,$row);
+        }
+        return $data;
+    }
 
 
 }
