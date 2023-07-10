@@ -72,5 +72,29 @@ class Regime_model extends CI_Model
         return $data;
     }
 
-
+    public function getById($idRegime){
+        $sql='SELECT * FROM regime where idRegime='.$idRegime;
+        $sql=$this->db->query($sql);
+        $result=$sql->row_array();
+        return $result;
+    }
+    
+    function generatePDF($id)
+    {
+        include('Pdf.php');
+        $pdf = new PDF();
+        $pdf->AddPage();
+        $plt = $this->Regime_model->getDetailsPlats($id);
+        $a = $this->Regime_model->getDetailsActivites($id);
+        $temp="0";
+        foreach($plt as $p){
+            $temp=$p;
+        }
+        $pdf->nomRegime($temp['reg']);
+        $pdf->prixRegime($temp['prix']);
+        $pdf->plats($plt);
+        $pdf->activites($a);
+        $pdf->SetFont('Times', '', 12);
+        $pdf->Output();
+    }
 }

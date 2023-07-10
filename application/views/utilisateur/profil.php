@@ -29,7 +29,7 @@
             <div class="card mb-12" style="margin-top: 50px;">
               <div class="card-body">
                 <div class="pt-12 pb-3">
-                  <h5 class="card-title text-center pb-0 fs-4">Profil Utilisateur</h5>
+                    <h5 class="card-title text-center pb-0 fs-4">Profil Utilisateur</h5>
                 </div> 
                 </br>
                 <div style="text-align:left;margin-left:40%;">
@@ -144,8 +144,10 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary"
                                     data-bs-dismiss="modal">Fermer</button>
-                                    <button type="button" class="btn btn-primary"
-                                    data-bs-dismiss="modal">Exporter PDF</button>
+                                    <form action="<?php echo base_url('Pages/toPdf'); ?>" method="post">
+                                        <button type="submit" class="btn btn-primary"
+                                    data-bs-dismiss="modal" style="color:white">Exporter PDF</button>
+                                    </form>
                             </div>
                         </div>
                     </div>

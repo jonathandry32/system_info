@@ -35,8 +35,8 @@ class Objectif extends CI_Controller {
 		$data['description']='';
 		$data['keywords']='';
 		$regime=$this->Regime_model->getById($this->input->post('idRegime'));
-		$this->Objectif_model->payer($regime['duree'],$regime['prix']);
-		$data['contents']='objectif/insert';
+		$this->Objectif_model->payer($regime['duree'],$regime['prix'],$regime['idRegime']);
+		$data['contents']='objectif/insertObjectif';
 		$this->load->view('template',$data);
 	}
 
