@@ -45,9 +45,11 @@ class Login extends CI_Controller {
 
     public function sign()
     {
+        $this->load->model('Login_model');
 		$data['title']='YourDiet';
 		$data['description']='';
 		$data['keywords']='';
+        $data['genre']=$this->Login_model->getGenre();
 		$this->load->view('utilisateur/signin',$data);
 	}
 
@@ -58,4 +60,26 @@ class Login extends CI_Controller {
 		$this->session->unset_userdata('isAdmin');
 		redirect('login');
 	}
+
+    public function inscription()
+	{
+        $this->load->model('Login_model');
+        $email=$this->input->post('email');
+        $pass=$this->input->post('pass');
+        $username=$this->input->post('username');
+        $idGenre=$this->input->post('idGenre');
+        $tel=$this->input->post('tel');
+        $adresse=$this->input->post('adresse');
+        $dtn=$this->input->post('dtn');
+
+        $this->Login_model->inscription($email,$pass,$username,$idGenre,$tel,$adresse,$dtn);
+
+		//	definition des donnees variables du template
+		$data['title']='YourDiet';
+		$data['description']='';
+		$data['keywords']='';
+
+		//	on charge la page dans le template
+		$this->load->view('utilisateur/login',$data);
+	}	
 }

@@ -37,24 +37,24 @@
                   </p>
                 </div>
 
-                <form id="login" class="row g-3 needs-validation" method="post" action="<?php echo base_url("InsertForm/"); ?>">
+                <form id="login" class="row g-3 needs-validation" method="post" action="<?php echo site_url("Login/inscription"); ?>">
                   
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-3 col-form-label">Adresse mail</label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" name="email">
+                      <input type="email" class="form-control" name="email" required>
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-3 col-form-label">Mot de passe</label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" name="pass">
+                      <input type="password" class="form-control" name="pass" required>
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-3 col-form-label">Nom d'utilisateur</label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" name="username">
+                      <input type="text" class="form-control" name="username" required>
                     </div>
                   </div>
                   <div class="row mb-3">
@@ -67,12 +67,6 @@
                                 ?>
                                     <option value="<?php echo $g['idGenre'];?>"><?php echo $g['nom'];?></option>
                                 <?php
-                                if($g['idGenre']==5)
-                                {
-                                    ?>
-                                        <option value="<?php echo $g['idGenre'];?>" selected><?php echo $g['nom'];?></option>
-                                    <?php
-                                }
                             }
                             ?>
                         </select>
@@ -81,19 +75,19 @@
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-3 col-form-label">Numero de telephone</label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" name="tel">
+                      <input type="text" class="form-control" name="tel" required>
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-3 col-form-label">Adresse</label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" name="adresse">
+                      <input type="text" class="form-control" name="adresse" required>
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-3 col-form-label">Date de naissance</label>
                     <div class="col-sm-9">
-                      <input type="date" class="form-control" name="dtn">
+                      <input type="date" class="form-control" name="dtn" required>
                     </div>
                   </div>
 
