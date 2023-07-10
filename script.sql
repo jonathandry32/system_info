@@ -148,9 +148,19 @@ create table regime_utilisateur(
 	foreign key (idUtilisateur) references utilisateur(idUtilisateur)
 );
 
+-- 1 oui 11 non
 create table code(
+    idCode int auto_increment primary key,
     code varchar(10),
-    valeur double
+    valeur double,
+    utilisable int
+);
+
+create table validation_code(
+    idCode int,
+    idUtilisateur int,
+    daty date,
+	foreign key (idUtilisateur) references utilisateur(idUtilisateur)
 );
 
 create table caisse(
