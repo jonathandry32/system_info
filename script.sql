@@ -1,4 +1,3 @@
-create database examen48h_base;
 use examen48h_base;
 
 create table genre(

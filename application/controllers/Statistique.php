@@ -26,9 +26,11 @@ class Statistique extends CI_Controller {
 	}
 	public function finance()
 	{
+		$this->load->model('Statistique_model');
 		$data['title']='YourDiet';
 		$data['description']='';
 		$data['keywords']='';
+		$data['financeData']=$this->Statistique_model->getPoids();
 		$data['contents']='statistique/finance';
 		$this->load->view('template',$data);
 	}
