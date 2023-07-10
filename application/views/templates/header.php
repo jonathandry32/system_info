@@ -112,94 +112,65 @@
                 
                 
                 <li class="nav-item">
+                    <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/profil"); ?>">
+                        <i class="bi bi-circle"></i><span> Accueil </span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link collapsed" data-bs-target="#etatf" data-bs-toggle="collapse" href="#">
-                      <i class="bi bi-person-plus"></i><span>Etat Financier</span><i class="bi bi-chevron-down ms-auto"></i>
+                      <i class="bi bi-person-plus"></i><span> Statistique </span><i class="bi bi-chevron-down ms-auto"></i>
                     </a>
                      <ul id="etatf" class="nav-content collapse " data-bs-parent="#sidebar-nav">   <li class="nav-item">
                          <li class="nav-item">
-                             <a class="nav-link collapsed"  href="<?php echo base_url("Pages/choix_journal"); ?>">
-                                 <i class="bi bi-circle"></i><span>Journal</span>
+                             <a class="nav-link collapsed"  href="<?php echo base_url("Statistique/taille"); ?>">
+                                 <i class="bi bi-circle"></i><span> Taille </span>
                              </a>
                          </li>
                         <li>
-                        <a class="nav-link collapsed"  href="<?php echo base_url("Pages/choix_grandlivre"); ?>">
-                            <i class="bi bi-circle"></i><span>Grand Livre</span>
+                        <a class="nav-link collapsed"  href="<?php echo base_url("Statistique/corps"); ?>">
+                            <i class="bi bi-circle"></i><span> Corps </span>
                         </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link collapsed"  href="<?php echo base_url("Pages/balance"); ?>">
-                                <i class="bi bi-circle"></i><span>balance</span>
+                            <a class="nav-link collapsed"  href="<?php echo base_url("Statistique/financiere"); ?>">
+                                <i class="bi bi-circle"></i><span> Financière </span>
                             </a>
                         </li>
                      </ul>
                 </li>
-                
-                <!-- End Components Nav -->
-                <li class="nav-heading">Analytique</li>
+                <li class="nav-item">
+                    <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/profil"); ?>">
+                        <i class="bi bi-circle"></i><span> Profil </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/profil"); ?>">
+                        <i class="bi bi-circle"></i><span> Code </span>
+                    </a>
+                </li>
 
-                <li class="nav-item">
-                    <a class="nav-link collapsed" data-bs-target="#tables-navPCA" data-bs-toggle="collapse" href="#">
-                      <i class="bi bi-person-plus"></i><span>PCA</span><i class="bi bi-chevron-down ms-auto"></i>
-                    </a>
-                     <ul id="tables-navPCA" class="nav-content collapse " data-bs-parent="#sidebar-nav">   <li class="nav-item">
-                        <li>
-                        <a class="nav-link collapsed"  href="<?php echo base_url("Pages/insertPCA"); ?>">
-                            <i class="bi bi-circle"></i><span>Insert PCA</span>
-                        </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link collapsed"  href="<?php echo base_url("Pages/listPCA"); ?>">
-                                <i class="bi bi-circle"></i><span>List PCA</span>
-                            </a>
-                        </li>
-                     </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link collapsed"  href="<?php echo base_url("Pages/balance_analytique"); ?>">
-                        <i class="bi bi-circle"></i><span>Balance</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link collapsed" data-bs-target="#t-nav2" data-bs-toggle="collapse" href="#">
-                      <i class="bi bi-person-plus"></i><span>Charges</span><i class="bi bi-chevron-down ms-auto"></i>
-                    </a>
-                     <ul id="t-nav2" class="nav-content collapse " data-bs-parent="#sidebar-nav">   <li class="nav-item">
-                        <li class="nav-item">
-                            <a class="nav-link collapsed"  href="<?php echo base_url("Pages/insertCharges"); ?>">
-                                <i class="bi bi-circle"></i><span>Insert Charges</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link collapsed"  href="<?php echo base_url("Pages/charges"); ?>">
-                                <i class="bi bi-circle"></i><span>Cout de revient</span>
-                            </a>
-                        </li>
-                     </ul>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="<?php echo base_url("Pages/toPdf"); ?>">
                         <i class="bi bi-house"></i>
                         <span>PDF</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link collapsed" data-bs-target="#tablesnav2" data-bs-toggle="collapse" href="#">
-                      <i class="bi bi-person-plus"></i><span>Centre et produit</span><i class="bi bi-chevron-down ms-auto"></i>
-                    </a>
-                     <ul id="tablesnav2" class="nav-content collapse " data-bs-parent="#sidebar-nav">   <li class="nav-item">
-                        <li class="nav-item">
-                            <a class="nav-link collapsed"  href="<?php echo base_url("Pages/centre"); ?>">
-                                <i class="bi bi-circle"></i><span>Nouveau Centre</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link collapsed"  href="<?php echo base_url("Pages/produit"); ?>">
-                                <i class="bi bi-circle"></i><span>Nouveau Produit</span>
-                            </a>
-                        </li>
-                     </ul>
-                </li>
                 <li class="nav-heading">Admin</li>
+                <li class="nav-item">
+                    <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/profil"); ?>">
+                        <i class="bi bi-circle"></i><span> Regime </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/profil"); ?>">
+                        <i class="bi bi-circle"></i><span> Plat </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/profil"); ?>">
+                        <i class="bi bi-circle"></i><span> Activite </span>
+                    </a>
+                </li>
             </ul>
 
         </aside><!-- End Sidebar-->
