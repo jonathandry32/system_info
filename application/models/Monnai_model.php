@@ -65,7 +65,7 @@
             $sql="UPDATE code set utilisable=11 where idCode=".$code;
             $this->db->query($sql);
             $sql1="DELETE FROM validation_code where idCode=".$code;
-            $this->db->query($sql);
+            $this->db->query($sql1);
             date_default_timezone_set('Europe/Moscow');
             $currentDateTime = date('Y-m-d H:i:s');
             $requete=array('idUtilisateur'=>$this->session->userdata('online'),
