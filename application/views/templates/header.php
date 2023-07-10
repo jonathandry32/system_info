@@ -192,7 +192,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link collapsed" data-bs-target="#activite" data-bs-toggle="collapse" href="#">
-                      <i class="bi bi-ev-front"></i><span> Activite </span><i class="bi bi-chevron-down ms-auto"></i>
+                      <i class="bi bi-alarm"></i><span> Activite </span><i class="bi bi-chevron-down ms-auto"></i>
                     </a>
                      <ul id="activite" class="nav-content collapse " data-bs-parent="#sidebar-nav">   <li class="nav-item">
                          <li class="nav-item">
