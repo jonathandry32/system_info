@@ -77,8 +77,7 @@ class Monnai extends CI_Controller {
 		$data['keywords']='';
         $data['list']=$this->Monnai_model->getValidation();
 		$this->Monnai_model->valider($this->input->post('idCode'),$this->input->post('montant'));
-        $data['contents']='monnai/validation';
-        $this->load->view('template',$data);
+        redirect('Monnai/index');
     }
 }
 ?>
