@@ -24,6 +24,19 @@
             return false;
         }
 
+        public function getGenre()
+        {   
+            $sql="select*from genre";
+            $query=$this->db->query($sql);
+            $results = $query->result_array();
+            return $results;
+        }
 
+        public function inscription($email,$passwrd,$username,$idGenre,$numero,$adresse,$dtn)
+        {
+            $requete=array('email'=>$email,'passwrd'=>$passwrd,'username'=>$username,
+            'idGenre'=>$idGenre,'numero'=>$numero,'adresse'=>$adresse,'dtn'=>$dtn,'isAdmin'=>0);
+            $this->db->insert('utilisateur',$requete);
+        }
     }
 ?>
