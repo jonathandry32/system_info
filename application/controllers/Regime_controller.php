@@ -8,6 +8,8 @@ class Regime_controller extends CI_Controller {
     }
 
     public function loadRegime(){
+        $this->load->model('Plat_model');
+        $data['plats']= $this->Plat_model->listePlat();
         $data['contents']='pages/insertRegime';
         $this->load->view('template',$data);
     }
