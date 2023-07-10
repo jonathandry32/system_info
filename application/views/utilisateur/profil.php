@@ -29,7 +29,7 @@
             <div class="card mb-12" style="margin-top: 50px;">
               <div class="card-body">
                 <div class="pt-12 pb-3">
-                  <h5 class="card-title text-center pb-0 fs-4">Profil Utilisateur</h5>
+                    <h5 class="card-title text-center pb-0 fs-4">Profil Utilisateur</h5>
                 </div> 
                 </br>
                 <div style="text-align:left;margin-left:40%;">
