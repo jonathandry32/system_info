@@ -35,37 +35,120 @@
                 </div>
             </div> 
             </br>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Ajouter des plats</label>
-                <?php for($i=0; $i<count($plats); $i++){ ?>
-                    <div class="col-sm-9">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="plat[]" id="plat<?php echo $i; ?>" value="<?php echo $plats[$i]['idPlat']; ?>">
-                                <label class="form-check-label" for="plat">
-                                    <?php echo $plats[$i]['plat']; ?>
-                                    <?php echo $plats[$i]['types']; ?>
-                                    <?php echo $plats[$i]['prix']; ?>
-                                </label>
+            
+            <div class="col-10">
+            <label class="col-sm-4 col-form-label">Ajouter des plats</label>
+                  <button type="button" data-bs-toggle="modal" data-bs-target="#basicModal"
+                                        class="btn btn-primary"><i class="bi bi-plus-circle-fill"></i>
+                                        Plats</button>
+            </div>
+
+<!-- Basic Modal -->
+<div class="modal fade" id="basicModal" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Liste des plats</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Yes/No</th>
+                                    <th scope="col">Nom</th>
+                                    <th scope="col">Types</th>
+                                    <th scope="col">prix</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <?php for($i=0; $i<count($plats); $i++){ ?>
+                                  <tr>
+                                    <td>
+                                      <input class="form-check-input" type="checkbox" id="gridCheck1" name="idspecialites" value="<%= specialites.get(i).getId() %>">
+                                    </td>
+                                    <th scope="row">
+                                        <input class="form-check-input" type="checkbox" name="plat[]" id="plat<?php echo $i; ?>" value="<?php echo $plats[$i]['idPlat']; ?>">
+                                    </th>
+                                    <td>
+                                        <?php echo $plats[$i]['plat']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $plats[$i]['types']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $plats[$i]['prix']; ?>
+                                    </td>
+                                  </tr>
+                                <?php } ?>
+                                </tbody>
+                              </table>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">Fermer</button>
+                                    <button type="button" class="btn btn-primary"
+                                    data-bs-dismiss="modal">Valider</button>
+                            </div>
                         </div>
                     </div>
-               <?php } ?>            
-            </div>           
-            <br>   
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Ajouter des activités</label>
-                <?php for($i=0; $i<count($activites); $i++){ ?>
-                    <div class="col-sm-9">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="activite[]" id="activite<?php echo $i; ?>" value="<?php echo $activites[$i]['idActivite']; ?>">
-                                <label class="form-check-label" for="activite">
+                </div><!-- End Basic Modal-->
+
+            <div class="col-10">
+            <label class="col-sm-4 col-form-label">Ajouter des activites</label>
+                  <button type="button" data-bs-toggle="modal" data-bs-target="#basicModal1"
+                                        class="btn btn-primary"><i class="bi bi-plus-circle-fill"></i>
+                                        Activites</button>
+            </div>
+
+            <div class="modal fade" id="basicModal1" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Liste des activites</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Yes/No</th>
+                                    <th scope="col">Nom</th>
+                                    <th scope="col">Types</th>
+                                    <th scope="col">prix</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                <?php for($i=0; $i<count($activites); $i++){ ?>
+                                  <tr>
+                                    <td>
+                                        <input class="form-check-input" type="checkbox" name="activite[]" id="activite<?php echo $i; ?>" value="<?php echo $activites[$i]['idActivite']; ?>">
+                                    </td>
+                                    <td>
                                     <?php echo $activites[$i]['act']; ?>
+                                    </td>
+                                    <td>
                                     <?php echo $activites[$i]['quantite']; ?>
+                                    </td>
+                                    <td>
                                     <?php echo $activites[$i]['unite']; ?>
-                                </label>
+                                    </td>
+                                  </tr>
+                                <?php } ?>
+                                </tbody>
+                              </table>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">Fermer</button>
+                                    <button type="button" class="btn btn-primary"
+                                    data-bs-dismiss="modal">Valider</button>
+                            </div>
                         </div>
                     </div>
-               <?php } ?>            
-            </div>          
+                </div>          
             <br>
             <center><button type="submit" class="btn btn-primary" >Ajouter</button></center>
             <hr>
