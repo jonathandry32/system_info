@@ -10,7 +10,7 @@
     <div class="cont">
         <center><h2>Modifier le régime</h2></center>
         <br>
-        <form action="<?php echo base_url('Regime_controller/updateRegime');?>" method="POST">
+        <form action="<?php echo base_url('Regime/updateRegime');?>" method="POST">
             <input type="hidden" name="idRegime" value="<?php echo $idRegime;?>">
             <input type="hidden" name="nom" value="<?php echo $nom;?>">
             <input type="hidden" name="duree" value="<?php echo $duree;?>">

@@ -33,7 +33,24 @@
                     <input type="number" name="prix" class="form-control" id="prix" required>
                     <div class="invalid-feedback">Prix obligatoire!</div>
                 </div>
+            </div> 
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Plats à ajouter</label>
+                <?php for($i=0; $i<count($plats); $i++){ ?>
+                    <div class="col-sm-9">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="plat" id="plat">
+                                <label class="form-check-label" for="plat">
+                                    <?php echo $plats[$i]['plat']; ?>
+                                    <?php echo $plats[$i]['types']; ?>
+                                    <?php echo $plats[$i]['prix']; ?>
+                                    <?php echo $plats[$i]['picture']; ?>
+                                </label>
+                        </div>
+                    </div>
+               <?php } ?>            
             </div>           
+                            <br>          
             <br>
             <center><button type="submit" class="btn btn-primary" >Ajouter</button></center>
             <hr>

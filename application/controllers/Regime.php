@@ -18,12 +18,8 @@ class Regime extends CI_Controller {
         $duree= $this->input->post('duree');
         $prix= $this->input->post('prix');
         $this->load->model('Regime_model');
-        $result= $this->Regime_model->insertRegime($nom,$duree);
-        $data['title']='YourDiet';
-		$data['description']='';
-		$data['keywords']='';
-        $data['contents']='utilisateur/after_login';
-        $this->load->view('template',$data);
+        $result= $this->Regime_model->insertRegime($nom,$duree,$prix);
+        redirect('Regime/listeRegime');
     }
 
     public function listeRegime(){
@@ -59,10 +55,7 @@ class Regime extends CI_Controller {
         $prix= $this->input->post('prix');
         $this->load->model('Regime_model');
         $this->Regime_model->updateRegime($id,$nom,$duree,$prix);
-        $data['title']='YourDiet';
-		$data['description']='';
-		$data['keywords']='';
-        $data['contents']='utilisateur/after_login';
+        redirect('Regime/listeRegime');
     }
 
     public function delete(){
@@ -70,9 +63,7 @@ class Regime extends CI_Controller {
         $this->load->model('Regime_model');
         $this->Regime_model->deleteRegime($id);
         $data['title']='YourDiet';
-		$data['description']='';
-		$data['keywords']='';
-        $data['contents']='utilisateur/after_login';
+        redirect('Regime/listeRegime');
     }
 
 }

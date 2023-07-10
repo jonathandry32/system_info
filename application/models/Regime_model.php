@@ -19,7 +19,7 @@ class Regime_model extends CI_Model
     }
 
     public function updateRegime($idRegime,$nom,$duree,$prix){
-        $sql='UPDATE regime set nom=%s, duree=%d, prix=%d where idRegime=%d';:
+        $sql='UPDATE regime set nom=%s, duree=%d, prix=%d where idRegime=%d';
         $sql=sprintf($sql,$this->db->escape($nom),$duree,$prix,$idRegime);
         $this->db->query($sql);
     }
