@@ -90,6 +90,18 @@
                       <input type="date" class="form-control" name="dtn" required>
                     </div>
                   </div>
+                  <div class="row mb-3">
+                    <label for="inputText" class="col-sm-3 col-form-label">Taille</label>
+                    <div class="col-sm-9">
+                      <input type="number" class="form-control" name="taille" required>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="inputText" class="col-sm-3 col-form-label">Poids</label>
+                    <div class="col-sm-9">
+                      <input type="number" class="form-control" name="poids" required>
+                    </div>
+                  </div>
 
                 <div class="col-6">
                   <button class="btn btn-secondary w-100" type="reset">Annuler</button>

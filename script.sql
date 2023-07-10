@@ -122,7 +122,7 @@ create table objectif_utilisateur(
 
 create table parametre(
     idParametre int auto_increment primary key,
-    nom varchar(50),
+    nom varchar(50)
 );
 
 create table detail_parametre(

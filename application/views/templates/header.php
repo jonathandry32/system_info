@@ -121,13 +121,13 @@
                              </a>
                          </li>
                         <li>
-                        <a class="nav-link collapsed"  href="<?php echo base_url("Statistique/corps"); ?>">
-                            <i class="bi bi-circle"></i><span> Corps </span>
+                        <a class="nav-link collapsed"  href="<?php echo base_url("Statistique/poids"); ?>">
+                            <i class="bi bi-circle"></i><span> Poids </span>
                         </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link collapsed"  href="<?php echo base_url("Statistique/financiere"); ?>">
-                                <i class="bi bi-circle"></i><span> Financière </span>
+                            <a class="nav-link collapsed"  href="<?php echo base_url("Statistique/finance"); ?>">
+                                <i class="bi bi-circle"></i><span> Finance </span>
                             </a>
                         </li>
                      </ul>
@@ -138,36 +138,81 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/controle"); ?>">
+                        <i class="bi bi-circle"></i><span> Contrôle </span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/profil"); ?>">
                         <i class="bi bi-circle"></i><span> Code </span>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="<?php echo base_url("Pages/toPdf"); ?>">
+                    <a class="nav-link collapsed" href="<?php echo base_url("Objectif/insert"); ?>">
                         <i class="bi bi-house"></i>
-                        <span>PDF</span>
-                    </a>
-                </li>
-                <li class="nav-heading">Admin</li>
-                <li class="nav-item">
-                    <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/profil"); ?>">
-                        <i class="bi bi-circle"></i><span> Regime </span>
+                        <span>Nouveau regime</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/profil"); ?>">
-                        <i class="bi bi-circle"></i><span> Plat </span>
+                    <a class="nav-link collapsed" data-bs-target="#reg" data-bs-toggle="collapse" href="#">
+                      <i class="bi bi-circle"></i><span> Regime </span><i class="bi bi-chevron-down ms-auto"></i>
                     </a>
+                     <ul id="reg" class="nav-content collapse " data-bs-parent="#sidebar-nav">   <li class="nav-item">
+                         <li class="nav-item">
+                             <a class="nav-link collapsed"  href="<?php echo base_url("Regime/loadRegime"); ?>">
+                                 <i class="bi bi-circle"></i><span> Insertion </span>
+                             </a>
+                         </li>
+                        <li>
+                        <a class="nav-link collapsed"  href="<?php echo base_url("Regime/listeRegime"); ?>">
+                            <i class="bi bi-circle"></i><span> Liste </span>
+                        </a>
+                        </li>
+                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/profil"); ?>">
-                        <i class="bi bi-circle"></i><span> Activite </span>
+                    <a class="nav-link collapsed" data-bs-target="#plat" data-bs-toggle="collapse" href="#">
+                      <i class="bi bi-circle"></i><span> Plat </span><i class="bi bi-chevron-down ms-auto"></i>
                     </a>
+                     <ul id="plat" class="nav-content collapse " data-bs-parent="#sidebar-nav">   <li class="nav-item">
+                         <li class="nav-item">
+                             <a class="nav-link collapsed"  href="<?php echo base_url("Plat/listePlat"); ?>">
+                                 <i class="bi bi-circle"></i><span> Insertion </span>
+                             </a>
+                         </li>
+                        <li>
+                        <a class="nav-link collapsed"  href="<?php echo base_url("Plat/listePlat"); ?>">
+                            <i class="bi bi-circle"></i><span> Liste </span>
+                        </a>
+                        </li>
+                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/profil"); ?>">
+                    <a class="nav-link collapsed" data-bs-target="#activite" data-bs-toggle="collapse" href="#">
+                      <i class="bi bi-circle"></i><span> Activite </span><i class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                     <ul id="activite" class="nav-content collapse " data-bs-parent="#sidebar-nav">   <li class="nav-item">
+                         <li class="nav-item">
+                             <a class="nav-link collapsed"  href="<?php echo base_url("Activite/loadActivite"); ?>">
+                                 <i class="bi bi-circle"></i><span> Insertion </span>
+                             </a>
+                         </li>
+                        <li>
+                        <a class="nav-link collapsed"  href="<?php echo base_url("Activite/listeActivite"); ?>">
+                            <i class="bi bi-circle"></i><span> Liste </span>
+                        </a>
+                        </li>
+                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link collapsed"  href="<?php echo base_url("Parametre/index"); ?>">
                         <i class="bi bi-circle"></i><span> Parametre </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link collapsed"  href="<?php echo base_url("Monnai/index"); ?>">
+                        <i class="bi bi-circle"></i><span> Monnai </span>
                     </a>
                 </li>
                 <li class="nav-item">
