@@ -110,12 +110,6 @@
                     </a>
                 </li><!-- End Dashboard Nav -->
                 
-                
-                <li class="nav-item">
-                    <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/profil"); ?>">
-                        <i class="bi bi-circle"></i><span> Accueil </span>
-                    </a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link collapsed" data-bs-target="#etatf" data-bs-toggle="collapse" href="#">
                       <i class="bi bi-person-plus"></i><span> Statistique </span><i class="bi bi-chevron-down ms-auto"></i>

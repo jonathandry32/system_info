@@ -90,6 +90,11 @@ insert into type_plat(nom) values ('Dejeuner');
 insert into type_plat(nom) values ('Gouter');
 insert into type_plat(nom) values ('Diner');
 
+create table cat_plat(
+    idCatPlat int auto_increment primary key,
+    nom varchar(50)
+);
+
 create table plat(
     idPlat int auto_increment primary key,
     nom varchar(50),
@@ -99,6 +104,13 @@ create table plat(
 	foreign key (idTypePlat) references type_plat(idTypePlat)
 );
 
+create table detail_plat(
+    idPlat int,
+    idCatPlat int,
+	foreign key (idPlat) references plat(idPlat),
+	foreign key (idCatPlat) references cat_plat(idCatPlat)
+);
+
 create table objectif_utilisateur(
     idObjectif int auto_increment primary key,
     type_objectif int,
@@ -106,6 +118,25 @@ create table objectif_utilisateur(
     maxvaleur double,
     idRegime int,
 	foreign key (idRegime) references regime(idRegime)
+);
+
+create table parametre(
+    idParametre int auto_increment primary key,
+    nom varchar(50),
+);
+
+create table detail_parametre(
+    idParametre int,
+    idActivite int,
+    idCatPlat int,
+	foreign key (idParametre) references parametre(idParametre)
+);
+
+create table parametre_utilisateur(
+    idUtilisateur int,
+    idParametre int,
+	foreign key (idUtilisateur) references utilisateur(idUtilisateur),
+	foreign key (idParametre) references parametre(idParametre)
 );
 
 create table regime_utilisateur(
