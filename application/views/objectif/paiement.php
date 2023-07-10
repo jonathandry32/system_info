@@ -20,8 +20,8 @@
                                 <td><?php echo $resultat[$i]['nom']; ?></td>
                                 <td>
                                     <form action="<?php echo base_url('objectif/payer');?>" method="post">
-                                        <input type="hidden" name="idParametre" value="<?php echo $list[$i]['idRegime']; ?>">
-                                        <button type="submit" class="btn btn-primary" style="color:white"><?php echo $list[$i]['prix']; ?></button>
+                                        <input type="hidden" name="idParametre" value="<?php echo $resultat[$i]['idRegime']; ?>">
+                                        <button type="submit" class="btn btn-primary" style="color:white"><?php echo $resultat[$i]['prix']; ?></button>
                                     </form>
                                 </td>
                             </tr>
