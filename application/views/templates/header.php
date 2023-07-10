@@ -149,11 +149,22 @@
                         <span>Nouveau regime</span>
                     </a>
                 </li>
-                <li class="nav-heading">Admin</li>
                 <li class="nav-item">
-                    <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/profil"); ?>">
-                        <i class="bi bi-circle"></i><span> Regime </span>
+                    <a class="nav-link collapsed" data-bs-target="#reg" data-bs-toggle="collapse" href="#">
+                      <i class="bi bi-circle"></i><span> Regime </span><i class="bi bi-chevron-down ms-auto"></i>
                     </a>
+                     <ul id="reg" class="nav-content collapse " data-bs-parent="#sidebar-nav">   <li class="nav-item">
+                         <li class="nav-item">
+                             <a class="nav-link collapsed"  href="<?php echo base_url("Regime/loadRegime"); ?>">
+                                 <i class="bi bi-circle"></i><span> Insertion </span>
+                             </a>
+                         </li>
+                        <li>
+                        <a class="nav-link collapsed"  href="<?php echo base_url("Regime/listeRegime"); ?>">
+                            <i class="bi bi-circle"></i><span> Liste </span>
+                        </a>
+                        </li>
+                     </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/profil"); ?>">
