@@ -68,7 +68,7 @@
             $this->db->query($sql);
             date_default_timezone_set('Europe/Moscow');
             $currentDateTime = date('Y-m-d H:i:s');
-            $requete=array('idUtilisateur'=>$this->session-userdata('online'),
+            $requete=array('idUtilisateur'=>$this->session->userdata('online'),
                 'valeur'=>$valeur,
                 'types'=>"entre",
                 'daty'=>$currentDateTime
