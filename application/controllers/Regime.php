@@ -5,10 +5,12 @@ class Regime extends CI_Controller {
 
     public function loadRegime(){
         $this->load->model('Plat_model');
+        $this->load->model('Activite_model');
         $data['title']='YourDiet';
 		$data['description']='';
 		$data['keywords']='';
         $data['plats']= $this->Plat_model->listePlat();
+        $data['activites']=$this->Activite_model->listeActivite();
         $data['contents']='regime/insertRegime';
         $this->load->view('template',$data);
     }
@@ -18,7 +20,9 @@ class Regime extends CI_Controller {
         $duree= $this->input->post('duree');
         $prix= $this->input->post('prix');
         $this->load->model('Regime_model');
-        $result= $this->Regime_model->insertRegime($nom,$duree,$prix);
+        $plats= $this->input->post('plat');
+        $activites = $this->input->post('activite');
+        $this->Regime_model->insertRegime($nom,$duree,$prix,$plats,$activites);
         redirect('Regime/listeRegime');
     }
 
@@ -64,6 +68,18 @@ class Regime extends CI_Controller {
         $this->Regime_model->deleteRegime($id);
         $data['title']='YourDiet';
         redirect('Regime/listeRegime');
+    }
+
+    public function details(){
+        $id= $this->input->post('idRegime');
+        $this->load->model('Regime_model');
+        $data['plats']=$this->Regime_model->getDetailsPlats($id);
+        $data['activites']=$this->Regime_model->getDetailsActivites($id);
+        $data['contents']='regime/detailsRegime';
+        $data['title']='YourDiet';
+		$data['description']='';
+		$data['keywords']='';
+        $this->load->view('template',$data);
     }
 
 }

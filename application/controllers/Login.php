@@ -32,10 +32,11 @@ class Login extends CI_Controller {
             $data['keywords']='';
 
             //	on charge la view qui contient le corps de la page
-            $data['contents']='utilisateur/profil';
+            //$data['contents']='utilisateur/profil';
 
             //	on charge la page dans le template
-            $this->load->view('template',$data);
+           // $this->load->view('template',$data);
+           redirect('Utilisateur/profil');
         }
         else
         {
@@ -57,7 +58,12 @@ class Login extends CI_Controller {
     {
 		$this->session->unset_userdata('online');
 		$this->session->unset_userdata('name');
-		$this->session->unset_userdata('isAdmin');
+        try
+        {
+            $this->session->unset_userdata('isAdmin');
+        }
+        catch(Exception $e)
+        {}
 		redirect('login');
 	}
 

@@ -34,27 +34,27 @@
                 </br>
                 <div style="text-align:left;margin-left:40%;">
                 <div class="field">
-                    <span> Nom d'utilisateur : </span> anarana
+                    <span> Nom d'utilisateur : </span> <?php echo $profil['username'] ; ?>
                 </div> 
                 </br>
                 <div class="field">
-                    <span> Contact : </span> contact
+                    <span> Contact : </span> <?php echo $profil['numero'] ; ?>
                 </div> 
                 </br>
                 <div class="field">
-                    <span> Adresse : </span> adresse
+                    <span> Adresse : </span> <?php echo $profil['adresse'] ; ?>
                 </div> 
                 </br>
                 <div class="field">
-                    <span> Date de naissance : </span> date
+                    <span> Date de naissance : </span> <?php echo $profil['dtn'] ; ?>
                 </div> 
                 </br>
                 <div class="field">
-                    <span> Poids : </span> 50 kg
+                    <span> Poids : </span> <?php echo $profil['poids'] ; ?> kg
                 </div> 
                 </br>
                 <div class="field">
-                    <span> Taille : </span> 150 cm
+                    <span> Taille : </span> <?php echo $profil['taille'] ; ?> cm
                 </div> 
                 </br>
                   <div class="col-12">
@@ -75,9 +75,71 @@
                             <div class="modal-body">
 
                                 <div class="pt-8">
-                                    <h5 class="card-title text-center pb-0 fs-4">Nom Regime</h5>
-                                </div>          
-        
+                                    <h5 class="card-title text-center pb-0 fs-4"><?php
+                                        $temp="0";
+                                        foreach($plats as $p){
+                                            $temp=$p;
+                                        }
+                                        echo $temp['reg'] ;
+                                ?></h5>
+                                </div>       
+                                </br>
+                                <h5 class="card-title text-center pb-0 fs-4">Plats contenus</h5>
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Plat</th>
+                                                <th scope="col">Type</th>
+                                                <th scope="col">Categorie</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            for ($i = 0; $i < count($plats); $i++) {
+                                            ?>
+                                                <tr>
+                                                    <td><?php echo $plats[$i]['plat']; ?></td>
+                                                    <td><?php echo $plats[$i]['types']; ?></td>
+                                                    <td><?php echo $plats[$i]['categ']; ?> </td>
+                                                </tr>
+                                            <?php
+                                            }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                    <hr>
+                                    <h5 class="card-title text-center pb-0 fs-4">Activités sportives contenues</h5>
+                                    <table class="table table-striped"   id="filter">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Activité sportive</th>
+                                                <th scope="col">Quantité</th>
+                                                <th scope="col">Unité</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            for ($i = 0; $i < count($activites); $i++) {
+                                            ?>
+                                                <tr>
+                                                    <td><?php echo $activites[$i]['act']; ?></td>
+                                                    <td><?php echo $activites[$i]['quantite']; ?></td>
+                                                    <td><?php echo $activites[$i]['unite']; ?> </td>
+                                                </tr>
+                                            <?php
+                                            }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                    <hr>
+                                    <h5 class="card-title text-center pb-0 fs-4">Prix du régime: <?php
+                                     $temp="0";
+                                     foreach($plats as $p){
+                                            $temp=$p;
+                                     }
+                                     echo $temp['prix']; ?> Ar 
+                                     
+                                    </h5>           
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary"

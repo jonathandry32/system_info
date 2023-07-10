@@ -32,6 +32,7 @@
                 <th scope="col">Prix</th>
                 <th scope="col">Modifier</th>
                 <th scope="col">Supprimer</th>
+                <th scope="col">Détails</th>
             </tr>
         </thead>
         <tbody>
@@ -55,6 +56,12 @@
                         <form action="<?php echo base_url('Regime/delete'); ?>" method="post">
                             <input type="hidden" name="idRegime" value="<?php echo $list[$i]['idRegime']; ?>">
                             <button type="submit" class="btn btn-danger" style="color:white"><i class="bi bi-trash-fill"></i></button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="<?php echo base_url('Regime/details'); ?>" method="post">
+                            <input type="hidden" name="idRegime" value="<?php echo $list[$i]['idRegime']; ?>">
+                            <button type="submit" class="btn btn-primary" style="color:white"><i class="bi bi-info-circle-fill"></i></button>
                         </form>
                     </td>
                 </tr>

@@ -1,4 +1,3 @@
-create database examen48h_base;
 use examen48h_base;
 
 create table genre(
@@ -81,6 +80,12 @@ create table detail_regime(
 	foreign key (idRegime) references regime(idRegime)
 );
 
+insert into detail_regime(idRegime,idPlat,idActivite) values (1,1,0);
+insert into detail_regime(idRegime,idPlat,idActivite) values (1,2,0);
+insert into detail_regime(idRegime,idPlat,idActivite) values (1,0,1);
+insert into detail_regime(idRegime,idPlat,idActivite) values (1,0,2);
+insert into detail_regime(idRegime,idPlat,idActivite) values (1,0,3);
+
 create table type_plat(
     idTypePlat int auto_increment primary key,
     nom varchar(50)
@@ -95,6 +100,9 @@ create table cat_plat(
     nom varchar(50)
 );
 
+insert into cat_plat(nom) values('Sucré');
+insert into cat_plat(nom) values('Salé');
+
 create table plat(
     idPlat int auto_increment primary key,
     nom varchar(50),
@@ -104,6 +112,11 @@ create table plat(
 	foreign key (idTypePlat) references type_plat(idTypePlat)
 );
 
+insert into plat(nom,idTypePlat,prix) values ('salade',2,12000);
+insert into plat(nom,idTypePlat,prix) values ('croissant',1,3000);
+insert into plat(nom,idTypePlat,prix) values ('soupe',4,15000);
+insert into plat(nom,idTypePlat,prix) values ('brownies',3,6000);
+
 create table detail_plat(
     idPlat int,
     idCatPlat int,
@@ -111,11 +124,20 @@ create table detail_plat(
 	foreign key (idCatPlat) references cat_plat(idCatPlat)
 );
 
+insert into detail_plat(idPlat,idCatPlat) values (1,2);
+insert into detail_plat(idPlat,idCatPlat) values (2,1);
+insert into detail_plat(idPlat,idCatPlat) values (3,2);
+insert into detail_plat(idPlat,idCatPlat) values (4,1);
+
 create table objectif_utilisateur(
     idObjectif int auto_increment primary key,
     type_objectif int,
     minvaleur double,
     maxvaleur double,
+    poidsmin double,
+    poidsmax double,
+    taillemin double,
+    taillemax double,
     idRegime int,
 	foreign key (idRegime) references regime(idRegime)
 );
@@ -142,7 +164,7 @@ create table parametre_utilisateur(
 create table regime_utilisateur(
     idRegimeUtilisateur int auto_increment primary key,
     idUtilisateur int,
-    idObjectif int,
+    idRegime int,
     debut Date,
     fin Date,
 	foreign key (idUtilisateur) references utilisateur(idUtilisateur)
