@@ -33,4 +33,10 @@ class Objectif_model extends CI_Model
         );
          $this->db->insert('caisse',$requete2);
     }
+
+    public function insertObjectif($type,$minval,$maxval,$poidsmin,$poidsmax,$taillemin,$taillemax,$idRegime){
+        $sql='INSERT INTO objectif_utilisateur(type_objectif,minvaleur,maxvaleur,poidsmin,poidsmax,taillemin,taillemax,idRegime) values (%d,%d,%d,%d,%d,%d,%d,%d)';
+        $sql=sprintf($sql,$type,$maxval,$minval,$poidsmin,$poidsmax,$taillemin,$taillemax,$idRegime);
+        $this->db->query($sql);
+    }
 }

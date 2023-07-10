@@ -39,5 +39,21 @@ class Objectif extends CI_Controller {
 		$data['contents']='objectif/insert';
 		$this->load->view('template',$data);
 	}
+
+	public function insertPage(){
+		$this->load->model('Objectif_model');
+		$this->load->model('Regime_model');
+		$data['objectifs']= $this->Objectif_model->getTypeObjectif();
+		$data['regimes']= $this->Regime_model->listeRegime();
+		$data['title']='YourDiet';
+		$data['description']='';
+		$data['keywords']='';
+		$data['contents']='objectif/insertObjectif';
+		$this->load->view('template',$data);
+	}
+
+	public function insertObjectif(){
+		$objectif = $this->input->post('objectif');
+	}
 }
 ?>

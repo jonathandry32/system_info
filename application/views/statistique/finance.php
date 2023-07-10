@@ -51,10 +51,29 @@
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+      labels: [
+        <?php
+          foreach($financeData as $td){
+            echo "'".$td['daty']."',";
+          }  
+        ?>
+      ],
       datasets: [{
-        label: 'Taille',
-        data: [12, 19, 3, 5, 2, 3],
+        label: 'Finance',
+        data: [
+          <?php
+            foreach($financeData as $td){
+              if($td['types']=='sortie')
+              {
+                echo $td['valeur']*(-1).",";
+              }
+              else
+              {
+                echo $td['valeur'].",";
+              }
+            }  
+          ?>
+        ],
         borderWidth: 1
       }]
     },

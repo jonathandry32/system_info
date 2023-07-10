@@ -17,7 +17,10 @@
             {
                 $this->session->set_userdata('online',$result['idUtilisateur']);
                 $this->session->set_userdata('name',$result['username']);
-                $this->session->set_userdata('isAdmin',$result['isAdmin']);
+                if($result['isAdmin']==1)
+                {
+                    $this->session->set_userdata('isAdmin',$result['isAdmin']);
+                }
                 return true;
             }
             $this->session->set_userdata('error_login');
