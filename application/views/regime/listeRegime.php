@@ -12,6 +12,7 @@
             <tr>
                 <th scope="col">Regime</th>
                 <th scope="col">Duree</th>
+                <th scope="col">Prix</th>
                 <th scope="col">Modifier</th>
                 <th scope="col">Supprimer</th>
             </tr>
@@ -23,6 +24,7 @@
                 <tr>
                     <td><?php echo $list[$i]['nom']; ?></td>
                     <td><?php echo $list[$i]['duree']; ?></td>
+                    <td><?php echo $list[$i]['prix']; ?> Ar</td>
                     <td>
                         <form action="<?php echo base_url('Regime/updatePage'); ?>" method="post">
                             <input type="hidden" name="idRegime" value="<?php echo $list[$i]['idRegime']; ?>">

@@ -15,4 +15,10 @@ class Plat_model extends CI_Model
     public function updatePlat(){
         
     }
+
+    public function deletePlat($idPlat){
+        $sql='DELETE FROM plat where idPlat=%d';
+        $sql=sprintf($sql,$idPlat);
+        $this->db->query($sql);
+    }
 }
