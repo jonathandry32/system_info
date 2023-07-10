@@ -1,3 +1,13 @@
+<style>
+  input{
+    border-color:lightgrey ;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    outline: none;
+    background-color: var(--background);
+  }
+</style>
 <main>
   <div class="container">
     <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
@@ -37,7 +47,12 @@
                 <div class="pt-4 pb-3">
                     <h5 class="card-title text-center pb-0 fs-4">Liste des codes</h5>
                 </div>
-                    <table class="table">
+    
+                <center style="margin-bottom: 20px; background:transparent;">
+                        <input type="text" id="filter1" onkeyup="filter1()" placeholder="Filtrer par Code">
+                        <input type="text" id="filter2" onkeyup="filter2()" placeholder="Filtrer par Valeur">
+                </center>
+                    <table class="table" id="filter">
                         <tr>
                                 <th>IdCode</th>
                                 <th>Code</th>
