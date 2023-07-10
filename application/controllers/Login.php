@@ -12,7 +12,7 @@ class Login extends CI_Controller {
 		//	on charge la page dans le template
 		if($this->session->userdata('online'))
         {
-            $this->load->view('utilisateur/after_login',$data);
+            $this->load->view('utilisateur/profil',$data);
 		}
 		else{
 			$this->load->view('utilisateur/login',$data);
@@ -32,7 +32,7 @@ class Login extends CI_Controller {
             $data['keywords']='';
 
             //	on charge la view qui contient le corps de la page
-            $data['contents']='utilisateur/after_login';
+            $data['contents']='utilisateur/profil';
 
             //	on charge la page dans le template
             $this->load->view('template',$data);
@@ -45,9 +45,11 @@ class Login extends CI_Controller {
 
     public function sign()
     {
+        $this->load->model('Login_model');
 		$data['title']='YourDiet';
 		$data['description']='';
 		$data['keywords']='';
+        $data['genre']=$this->Login_model->getGenre();
 		$this->load->view('utilisateur/signin',$data);
 	}
 
@@ -69,8 +71,10 @@ class Login extends CI_Controller {
         $tel=$this->input->post('tel');
         $adresse=$this->input->post('adresse');
         $dtn=$this->input->post('dtn');
+        $taille=$this->input->post('taille');
+        $poids=$this->input->post('poids');
 
-        $this->Login_model->inscription($email,$pass,$username,$idGenre,$tel,$adresse,$dtn);
+        $this->Login_model->inscription($email,$pass,$username,$idGenre,$tel,$adresse,$dtn,$taille,$poids);
 
 		//	definition des donnees variables du template
 		$data['title']='YourDiet';
