@@ -65,9 +65,6 @@
                                 <tbody>
                                   <?php for($i=0; $i<count($plats); $i++){ ?>
                                   <tr>
-                                    <td>
-                                      <input class="form-check-input" type="checkbox" id="gridCheck1" name="idspecialites" value="<%= specialites.get(i).getId() %>">
-                                    </td>
                                     <th scope="row">
                                         <input class="form-check-input" type="checkbox" name="plat[]" id="plat<?php echo $i; ?>" value="<?php echo $plats[$i]['idPlat']; ?>">
                                     </th>
