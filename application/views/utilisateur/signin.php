@@ -37,24 +37,27 @@
                   </p>
                 </div>
 
-                <form id="login" class="row g-3 needs-validation" method="post" action="<?php echo site_url("Login/inscription"); ?>">
-                  
+                <form id="login" class="row g-3 needs-validation" method="post" action="<?php echo site_url("Login/inscription"); ?>" novalidate>
+
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-3 col-form-label">Adresse mail</label>
                     <div class="col-sm-9">
                       <input type="email" class="form-control" name="email" required>
+                      <div class="invalid-feedback">Please enter your Email!</div>
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-3 col-form-label">Mot de passe</label>
                     <div class="col-sm-9">
                       <input type="password" class="form-control" name="pass" required>
+                      <div class="invalid-feedback">Please enter your Password!</div>
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-3 col-form-label">Nom d'utilisateur</label>
                     <div class="col-sm-9">
                       <input type="text" class="form-control" name="username" required>
+                      <div class="invalid-feedback">Please enter your Username!</div>
                     </div>
                   </div>
                   <div class="row mb-3">
@@ -76,30 +79,35 @@
                     <label for="inputText" class="col-sm-3 col-form-label">Numero de telephone</label>
                     <div class="col-sm-9">
                       <input type="text" class="form-control" name="tel" required>
+                      <div class="invalid-feedback">Please enter your Number!</div>
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-3 col-form-label">Adresse</label>
                     <div class="col-sm-9">
                       <input type="text" class="form-control" name="adresse" required>
+                      <div class="invalid-feedback">Please enter your Adresse!</div>
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-3 col-form-label">Date de naissance</label>
                     <div class="col-sm-9">
                       <input type="date" class="form-control" name="dtn" required>
+                      <div class="invalid-feedback">Please enter your Birthday!</div>
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-3 col-form-label">Taille</label>
                     <div class="col-sm-9">
                       <input type="number" class="form-control" name="taille" required>
+                      <div class="invalid-feedback">Please enter your Size!</div>
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-3 col-form-label">Poids</label>
                     <div class="col-sm-9">
                       <input type="number" class="form-control" name="poids" required>
+                      <div class="invalid-feedback">Please enter your Weight!</div>
                     </div>
                   </div>
 
@@ -122,3 +130,16 @@
 
   </div>
 </main><!-- End #main -->
+<!-- Vendor JS Files -->
+<script src="<?php echo base_url('assets/vendor/apexcharts/apexcharts.min.js'); ?>"></script>
+<script src="<?php echo base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
+<script src="<?php echo base_url('assets/vendor/chart.js/chart.min.js'); ?>"></script>
+<script src="<?php echo base_url('assets/vendor/echarts/echarts.min.js'); ?>"></script>
+<script src="<?php echo base_url('assets/vendor/quill/quill.min.js'); ?>"></script>
+<script src="<?php echo base_url('assets/vendor/simple-datatables/simple-datatables.js'); ?>"></script>
+<script src="<?php echo base_url('assets/vendor/tinymce/tinymce.min.js'); ?>"></script>
+<script src="<?php echo base_url('assets/vendor/php-email-form/validate.js'); ?>"></script>
+<script src="<?php echo base_url('assets/js/filtrage.js'); ?>"></script>
+
+<!-- Template Main JS File -->
+<script src="<?php echo base_url('assets/js/main.js'); ?>"></script>

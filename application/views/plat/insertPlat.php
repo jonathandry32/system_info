@@ -23,11 +23,12 @@
                   <h5 class="card-title text-center pb-0 fs-4">Ajout de plat</h5>
                 </div>
 
-                <form id="login" class="row g-3 needs-validation" method="post" action="<?php echo base_url();?>plat/insertPlat" enctype="multipart/form-data">
+                <form id="login" class="row g-3 needs-validation" method="post" action="<?php echo base_url();?>plat/insertPlat" enctype="multipart/form-data" novalidate>
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-3 col-form-label">Nom</label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" name="nom">
+                      <input type="text" class="form-control" name="nom" required>
+                      <div class="invalid-feedback">Nom obligatoire!</div>
                     </div>
                   </div>
                   <div class="row mb-3">
@@ -48,7 +49,8 @@
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-3 col-form-label">Prix</label>
                     <div class="col-sm-9">
-                      <input type="number" class="form-control" name="prix">
+                      <input type="number" class="form-control" name="prix" required>
+                      <div class="invalid-feedback">Prix obligatoire!</div>
                     </div>
                   </div>
                   <div class="row mb-3">

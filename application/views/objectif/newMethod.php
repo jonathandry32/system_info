@@ -11,12 +11,12 @@
               <div class="card-body">
 
                 <div class="pt-4 pb-3">
-                  <h5 class="card-title text-center pb-0 fs-4">Nouvelle regime</h5>
+                  <h5 class="card-title text-center pb-0 fs-4">Nouveau regime</h5>
                   <p class="text-center small">Entrez les informations pour savoir ce qu'il vous faut.
                   </p>
                 </div>
 
-                <form id="login" class="row g-3 needs-validation" method="post" action="<?php echo site_url("Objectif/prediction"); ?>">
+                <form id="login" class="row g-3 needs-validation" method="post" action="<?php echo site_url("Objectif/prediction"); ?>" novalidate>
                   
                 <div class="row mb-3">
                       <label class="col-sm-3 col-form-label"> Type objectif </label>
@@ -38,6 +38,7 @@
                     <label for="inputText" class="col-sm-3 col-form-label">Kilogramme </label>
                     <div class="col-sm-9">
                       <input type="text" class="form-control" name="kg" required>
+                      <div class="invalid-feedback">Objectif poids obligatoire!</div>
                     </div>
                   </div>
 
@@ -45,6 +46,7 @@
                     <label for="inputText" class="col-sm-3 col-form-label">Poids </label>
                     <div class="col-sm-9">
                       <input type="text" class="form-control" name="poids" required>
+                      <div class="invalid-feedback">Poids obligatoire!</div>
                     </div>
                   </div>
 
@@ -52,6 +54,7 @@
                     <label for="inputText" class="col-sm-3 col-form-label">Taille</label>
                     <div class="col-sm-9">
                       <input type="text" class="form-control" name="taille" required>
+                      <div class="invalid-feedback">Taille obligatoire!</div>
                     </div>
                   </div>
         
