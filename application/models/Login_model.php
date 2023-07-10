@@ -32,11 +32,15 @@
             return $results;
         }
 
-        public function inscription($email,$passwrd,$username,$idGenre,$numero,$adresse,$dtn)
+        public function inscription($email,$passwrd,$username,$idGenre,$numero,$adresse,$dtn,$taille,$poids)
         {
             $requete=array('email'=>$email,'passwrd'=>$passwrd,'username'=>$username,
             'idGenre'=>$idGenre,'numero'=>$numero,'adresse'=>$adresse,'dtn'=>$dtn,'isAdmin'=>0);
             $this->db->insert('utilisateur',$requete);
+
+            $idUtilisateur = $this->db->insert_id();
+            $requete=array('idUtilisateur'=>$idUtilisateur,'taille'=>$taille,'poids'=>$poids,'daty'=>now());
+            $this->db->insert('detail_utilisateur',$requete);
         }
     }
 ?>

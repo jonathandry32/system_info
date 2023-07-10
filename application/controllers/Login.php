@@ -71,8 +71,10 @@ class Login extends CI_Controller {
         $tel=$this->input->post('tel');
         $adresse=$this->input->post('adresse');
         $dtn=$this->input->post('dtn');
+        $taille=$this->input->post('taille$taille');
+        $poids=$this->input->post('poids');
 
-        $this->Login_model->inscription($email,$pass,$username,$idGenre,$tel,$adresse,$dtn);
+        $this->Login_model->inscription($email,$pass,$username,$idGenre,$tel,$adresse,$dtn,$taille,$poids);
 
 		//	definition des donnees variables du template
 		$data['title']='YourDiet';
