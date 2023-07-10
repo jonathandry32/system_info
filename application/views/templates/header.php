@@ -127,12 +127,12 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/profil"); ?>">
-                        <i class="bi bi-house"></i><span> Profil </span>
+                        <i class="bi bi-person-circle"></i><span> Profil </span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/controle"); ?>">
-                        <i class="bi bi-circle"></i><span> Contrôle </span>
+                        <i class="bi bi-house"></i><span> Contrôle </span>
                     </a>
                 </li>
 
@@ -151,7 +151,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="<?php echo base_url("Regime/listeRegime"); ?>">
-                        <i class="bi bi-house"></i>
+                        <i class="bi bi-menu-app"></i>
                         <span>Liste Regime</span>
                     </a>
                 </li>
@@ -175,7 +175,7 @@
                 
                 <li class="nav-item">
                     <a class="nav-link collapsed" data-bs-target="#reg" data-bs-toggle="collapse" href="#">
-                      <i class="bi bi-circle"></i><span> Regime </span><i class="bi bi-chevron-down ms-auto"></i>
+                      <i class="bi bi-clipboard-check"></i><span> Regime </span><i class="bi bi-chevron-down ms-auto"></i>
                     </a>
                      <ul id="reg" class="nav-content collapse " data-bs-parent="#sidebar-nav">   <li class="nav-item">
                          <li class="nav-item">
@@ -192,7 +192,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link collapsed" data-bs-target="#activite" data-bs-toggle="collapse" href="#">
-                      <i class="bi bi-circle"></i><span> Activite </span><i class="bi bi-chevron-down ms-auto"></i>
+                      <i class="bi bi-ev-front"></i><span> Activite </span><i class="bi bi-chevron-down ms-auto"></i>
                     </a>
                      <ul id="activite" class="nav-content collapse " data-bs-parent="#sidebar-nav">   <li class="nav-item">
                          <li class="nav-item">
@@ -210,19 +210,19 @@
                 
                 <li class="nav-item">
                     <a class="nav-link collapsed"  href="<?php echo base_url("Parametre/index"); ?>">
-                        <i class="bi bi-circle"></i><span> Parametre </span>
+                        <i class="bi bi-gear"></i><span> Parametre </span>
                     </a>
                 </li>
                 
                 <li class="nav-item">
                     <a class="nav-link collapsed"  href="<?php echo base_url("Objectif/insertPage"); ?>">
-                        <i class="bi bi-circle"></i><span> Objectif </span>
+                        <i class="bi bi-info-circle"></i><span> Objectif </span>
                     </a>
                 </li>
                 
                 <li class="nav-item">
                     <a class="nav-link collapsed" data-bs-target="#plat" data-bs-toggle="collapse" href="#">
-                      <i class="bi bi-circle"></i><span> Plat </span><i class="bi bi-chevron-down ms-auto"></i>
+                      <i class="bi bi-cup-straw"></i><span> Plat </span><i class="bi bi-chevron-down ms-auto"></i>
                     </a>
                      <ul id="plat" class="nav-content collapse " data-bs-parent="#sidebar-nav">   <li class="nav-item">
                          <li class="nav-item">
