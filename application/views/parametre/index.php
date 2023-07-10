@@ -45,9 +45,9 @@
                     <h5 class="card-title text-center pb-0 fs-4">Liste des parametres</h5>
                 </div>
                 
-                <div style="margin-bottom: 20px; background:transparent;">
+                <center style="margin-bottom: 20px; background:transparent;">
                     <input type="text" id="filter0" onkeyup="filter0()" placeholder="Filtrer par Nom">
-                </div>
+                </center>
                     <table class="table"  id="filter">
                         <tr>
                                 <th scope="col">Nom</th>

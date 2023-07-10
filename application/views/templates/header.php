@@ -211,6 +211,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link collapsed"  href="<?php echo base_url("Monnai/index"); ?>">
+                        <i class="bi bi-circle"></i><span> Monnai </span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/profil"); ?>">
                         <i class="bi bi-circle"></i><span> Validation code </span>
                     </a>

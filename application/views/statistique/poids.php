@@ -51,10 +51,22 @@
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+      labels: [
+        <?php
+          foreach($corpsData as $td){
+            echo "'".$td['daty']."',";
+          }  
+        ?>
+      ],
       datasets: [{
-        label: 'Taille',
-        data: [12, 19, 3, 5, 2, 3],
+        label: 'Poids (kg)',
+        data: [
+          <?php
+            foreach($corpsData as $td){
+              echo $td['poids'].",";
+            }  
+          ?>
+        ],
         borderWidth: 1
       }]
     },
@@ -67,4 +79,3 @@
     }
   });
 </script>
- 

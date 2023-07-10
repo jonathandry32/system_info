@@ -3,20 +3,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Statistique_model extends CI_Model
 {
-    public function getTailleDate(){
-        $query= $this->db->query('SELECT * FROM plat');
-        $data=array();
-        foreach($query->result_array() as $row){
-            array_push($data,$row);
-        }
-        return $data;
+    public function getTaille()
+    {   
+        $sql="select taille,daty from detail_utilisateur where idUtilisateur=".$this->session->userdata('online');
+        $query=$this->db->query($sql);
+        $results = $query->result_array();
+        return $results;
     }
-    public function getTaillevalue(){
-        $query= $this->db->query('SELECT * FROM plat');
-        $data=array();
-        foreach($query->result_array() as $row){
-            array_push($data,$row);
-        }
-        return $data;
+    public function getPoids()
+    {   
+        $sql="select poids,daty from detail_utilisateur where idUtilisateur=".$this->session->userdata('online');
+        $query=$this->db->query($sql);
+        $results = $query->result_array();
+        return $results;
+    }
+    public function getFinance()
+    {   
+        $sql="select * from caisse where idUtilisateur=".$this->session->userdata('online');
+        $query=$this->db->query($sql);
+        $results = $query->result_array();
+        return $results;
     }
 }
