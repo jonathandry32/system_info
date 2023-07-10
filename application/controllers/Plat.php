@@ -65,10 +65,11 @@ class Plat extends CI_Controller {
         $nom = $this->input->post('nom');
         $idTypePlat = $this->input->post('idTypePlat');
         $prix = $this->input->post('prix');
+
         if (!empty($_FILES['image']['name']))
         {
             // Set preference
-            $config['upload_path'] = 'img/';
+            $config['upload_path'] = 'assets/img/';
             $config['allowed_types'] = 'jpg|jpeg|png|JPG|JPEG|PNG';
             $config['file_name'] = $_FILES['image']['name'];
             $config['max_size'] = '30000';

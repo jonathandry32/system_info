@@ -8,7 +8,14 @@
             <div class="row justify-content-center" style="background-color:whitesmoke;border-color:whitesmoke ">
                 <br>
 <body>
-<h3 class="card-title text-center pb-0 fs-4">Régime: <?php echo $plats[0]['reg'] ; ?></h3>
+<div class="pt-8">
+                                    <h5 class="card-title text-center pb-0 fs-4"><?php
+                                        $temp="0";
+                                        foreach($plats as $p){
+                                            $temp=$p;
+                                        }
+                                ?>
+<h3 class="card-title text-center pb-0 fs-4">Régime: <?php echo $temp['reg'] ; ?></h3>
 </br>
 <h5 class="card-title text-center pb-0 fs-4">Plats contenus</h5>
     <table class="table table-striped"   id="filter">
@@ -59,7 +66,12 @@
         </tbody>
     </table>
     <hr>
-    <h5 class="card-title text-center pb-0 fs-4">Prix du régime: <?php echo $plats[0]['prix']; ?> Ar </h5>
+    <h5 class="card-title text-center pb-0 fs-4">Prix du régime: <?php
+                                     $temp="0";
+                                     foreach($plats as $p){
+                                            $temp=$p;
+                                     }
+                                     echo $temp['prix']; ?> Ar </h5>
 </body>
 </div>
 </div>

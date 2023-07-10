@@ -33,16 +33,16 @@
 
         public function portefeuille()
         {
-            $sql="SELECT 
-            (SELECT SUM(valeur) FROM caisse WHERE types = 'entre' AND idUtilisateur = ".$this->session->userdata('online').") -
-            (SELECT SUM(valeur) FROM caisse WHERE types = 'sortie' AND idUtilisateur = ".$this->session->userdata('online').") AS portefeuille
-            FROM dual";
+            $sql="SELECT SUM(CASE WHEN types = 'entre' THEN valeur ELSE -valeur END) AS solde
+            FROM caisse where idUtilisateur=
+            ".$this->session->userdata('online');
+
             $query=$this->db->query($sql);
             $results = $query->result_array();
             $result=0;
             foreach($results as $res)
             {
-                $result=$result+$res['portefeuille'];
+                $result=$result+$res['solde'];
             }
             return $result;
         }
@@ -65,10 +65,10 @@
             $sql="UPDATE code set utilisable=11 where idCode=".$code;
             $this->db->query($sql);
             $sql1="DELETE FROM validation_code where idCode=".$code;
-            $this->db->query($sql);
+            $this->db->query($sql1);
             date_default_timezone_set('Europe/Moscow');
             $currentDateTime = date('Y-m-d H:i:s');
-            $requete=array('idUtilisateur'=>$this->session-userdata('online'),
+            $requete=array('idUtilisateur'=>$this->session->userdata('online'),
                 'valeur'=>$valeur,
                 'types'=>"entre",
                 'daty'=>$currentDateTime
