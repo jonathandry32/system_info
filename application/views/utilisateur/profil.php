@@ -144,8 +144,10 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary"
                                     data-bs-dismiss="modal">Fermer</button>
-                                    <button type="button" class="btn btn-primary"
-                                    data-bs-dismiss="modal">Exporter PDF</button>
+                                    <form action="<?php echo base_url('Pages/toPdf'); ?>" method="post">
+                                        <button type="submit" class="btn btn-primary"
+                                    data-bs-dismiss="modal" style="color:white">Exporter PDF</button>
+                                    </form>
                             </div>
                         </div>
                     </div>
