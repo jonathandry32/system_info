@@ -100,15 +100,8 @@
 
         <!-- ======= Sidebar ======= -->
         <aside id="sidebar" class="sidebar">
-
             <ul class="sidebar-nav" id="sidebar-nav">
                 <li class="nav-heading">General</li>
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#">
-                        <i class="bi bi-house"></i>
-                        <span>Accueil</span>
-                    </a>
-                </li><!-- End Dashboard Nav -->
 
                 <li class="nav-item">
                     <a class="nav-link collapsed" data-bs-target="#etatf" data-bs-toggle="collapse" href="#">
@@ -142,9 +135,10 @@
                         <i class="bi bi-circle"></i><span> Contrôle </span>
                     </a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link collapsed"  href="<?php echo base_url("Monnai/insertCodePage"); ?>">
-                        <i class="bi bi-circle"></i><span> Code </span>
+                    <a class="nav-link collapsed"  href="<?php echo base_url("Monnai/index"); ?>">
+                        <i class="bi bi-circle"></i><span> Monnai </span>
                     </a>
                 </li>
 
@@ -154,6 +148,31 @@
                         <span>Nouveau regime</span>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="<?php echo base_url("Regime/listeRegime"); ?>">
+                        <i class="bi bi-house"></i>
+                        <span>Liste Regime</span>
+                    </a>
+                </li>
+
+                <li class="nav-heading">Admin</li>
+                <?php 
+                if($this->session->has_userdata('isAdmin')){ ?>
+
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed"  href="<?php echo base_url("Monnai/validation"); ?>">
+                        <i class="bi bi-circle"></i><span> Validation code </span>
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link collapsed"  href="<?php echo base_url("Monnai/insertCodePage"); ?>">
+                        <i class="bi bi-circle"></i><span> Code </span>
+                    </a>
+                </li>
+                
                 <li class="nav-item">
                     <a class="nav-link collapsed" data-bs-target="#reg" data-bs-toggle="collapse" href="#">
                       <i class="bi bi-circle"></i><span> Regime </span><i class="bi bi-chevron-down ms-auto"></i>
@@ -166,23 +185,6 @@
                          </li>
                         <li>
                         <a class="nav-link collapsed"  href="<?php echo base_url("Regime/listeRegime"); ?>">
-                            <i class="bi bi-circle"></i><span> Liste </span>
-                        </a>
-                        </li>
-                     </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link collapsed" data-bs-target="#plat" data-bs-toggle="collapse" href="#">
-                      <i class="bi bi-circle"></i><span> Plat </span><i class="bi bi-chevron-down ms-auto"></i>
-                    </a>
-                     <ul id="plat" class="nav-content collapse " data-bs-parent="#sidebar-nav">   <li class="nav-item">
-                         <li class="nav-item">
-                             <a class="nav-link collapsed"  href="<?php echo base_url("Plat/insertPlatPage"); ?>">
-                                 <i class="bi bi-circle"></i><span> Insertion </span>
-                             </a>
-                         </li>
-                        <li>
-                        <a class="nav-link collapsed"  href="<?php echo base_url("Plat/listePlat"); ?>">
                             <i class="bi bi-circle"></i><span> Liste </span>
                         </a>
                         </li>
@@ -205,21 +207,41 @@
                         </li>
                      </ul>
                 </li>
+                
                 <li class="nav-item">
                     <a class="nav-link collapsed"  href="<?php echo base_url("Parametre/index"); ?>">
                         <i class="bi bi-circle"></i><span> Parametre </span>
                     </a>
                 </li>
+                
                 <li class="nav-item">
-                    <a class="nav-link collapsed"  href="<?php echo base_url("Monnai/index"); ?>">
-                        <i class="bi bi-circle"></i><span> Monnai </span>
+                    <a class="nav-link collapsed"  href="<?php echo base_url("Objectif/insertPage"); ?>">
+                        <i class="bi bi-circle"></i><span> Objectif </span>
                     </a>
                 </li>
+                
                 <li class="nav-item">
-                    <a class="nav-link collapsed"  href="<?php echo base_url("Monnai/validation"); ?>">
-                        <i class="bi bi-circle"></i><span> Validation code </span>
+                    <a class="nav-link collapsed" data-bs-target="#plat" data-bs-toggle="collapse" href="#">
+                      <i class="bi bi-circle"></i><span> Plat </span><i class="bi bi-chevron-down ms-auto"></i>
                     </a>
+                     <ul id="plat" class="nav-content collapse " data-bs-parent="#sidebar-nav">   <li class="nav-item">
+                         <li class="nav-item">
+                             <a class="nav-link collapsed"  href="<?php echo base_url("Plat/insertPlatPage"); ?>">
+                                 <i class="bi bi-circle"></i><span> Insertion </span>
+                             </a>
+                         </li>
+                        <li>
+                        <a class="nav-link collapsed"  href="<?php echo base_url("Plat/listePlat"); ?>">
+                            <i class="bi bi-circle"></i><span> Liste </span>
+                        </a>
+                        </li>
+                     </ul>
                 </li>
+                
+                <?php } 
+                else{ ?>
+                    <h3 style="color:red;"> Admin only </h3>
+                <?php } ?>
             </ul>
 
         </aside><!-- End Sidebar-->
