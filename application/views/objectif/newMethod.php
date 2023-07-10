@@ -18,6 +18,29 @@
 
                 <form id="login" class="row g-3 needs-validation" method="post" action="">
                   
+                <div class="row mb-3">
+                      <label class="col-sm-3 col-form-label"> Type objectif </label>
+                      <div class="col-sm-9">
+                        <select class="form-select" aria-label="Default select example" name="type_objectif">
+                            <?php
+                            foreach($type_objectif as $g) 
+                            {
+                                ?>
+                                    <option value="<?php echo $g['idTypeObjectif'];?>"><?php echo $g['nom'];?></option>
+                                <?php
+                            }
+                            ?>
+                        </select>
+                      </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <label for="inputText" class="col-sm-3 col-form-label">Kilogramme </label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" name="kg" required>
+                    </div>
+                  </div>
+
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-3 col-form-label">Poids </label>
                     <div class="col-sm-9">
@@ -51,6 +74,7 @@
                               <table class="table">
                                 <thead>
                                   <tr>
+                                    <th scope="col"> Yes/No</th>
                                     <th scope="col">id</th>
                                     <th scope="col">Nom</th>
                                   </tr>
@@ -59,13 +83,13 @@
                                   <?php for($i=0; $i < count($paramListe); $i++) { ?>
                                     <tr>
                                         <td>
-                                        <input class="form-check-input" type="checkbox" id="gridCheck1" name="idspecialites" value="<?php echo $paramListe['idParametre']; ?>">
+                                            <input class="form-check-input" type="checkbox" id="gridCheck1" name="idParametre" value="<?php echo $paramListe[$i]['idParametre']; ?>">
                                         </td>
                                         <th scope="row">
-                                            <?php echo $paramListe['idParametre']; ?>
+                                            <?php echo $paramListe[$i]['idParametre']; ?>
                                         </th>
                                         <td>
-                                            <?php echo $paramListe['nom']; ?>
+                                            <?php echo $paramListe[$i]['nom']; ?>
                                         </td>
                                     </tr>
                                   <?php } ?>
