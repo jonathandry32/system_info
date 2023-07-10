@@ -22,11 +22,11 @@ create table utilisateur(
 );
 
 -- admin 1 oui 0 non
-insert into utilisateur(email,passwrd,username,genre,numero,adresse,isAdmin) values ('Admin@admin.net','root','Administrateur',1,'+261 20 22 456 12','Local',1);
-insert into utilisateur(email,passwrd,username,genre,numero,adresse,isAdmin) values ('lol@bot.io','lol','Bot',2,'+261 34 52 558 91','Lot Iv 7 Ivato',0);
-insert into utilisateur(email,passwrd,username,genre,numero,adresse,isAdmin) values ('jonathan@gmail.com','jonathan','Jonathandry32',1,'+261 33 125 78','Lot II C 1AC Manjakaray',0);
-insert into utilisateur(email,passwrd,username,genre,numero,adresse,isAdmin) values ('koloina@gmail.com','koloina','Koloina06',2,'+261 32 54 789 12','Lot Ter Ambohijanaka',0);
-insert into utilisateur(email,passwrd,username,genre,numero,adresse,isAdmin) values ('johary@gmail.com','johary','Johary17',1,'+261 34 78 546 12','Lot domaine Ampefiloha',0);
+insert into utilisateur(email,passwrd,username,idGenre,numero,adresse,isAdmin) values ('Admin@admin.net','root','Administrateur',1,'+261 20 22 456 12','Local',1);
+insert into utilisateur(email,passwrd,username,idGenre,numero,adresse,isAdmin) values ('lol@bot.io','lol','Bot',2,'+261 34 52 558 91','Lot Iv 7 Ivato',0);
+insert into utilisateur(email,passwrd,username,idGenre,numero,adresse,isAdmin) values ('jonathan@gmail.com','jonathan','Jonathandry32',1,'+261 33 125 78','Lot II C 1AC Manjakaray',0);
+insert into utilisateur(email,passwrd,username,idGenre,numero,adresse,isAdmin) values ('koloina@gmail.com','koloina','Koloina06',2,'+261 32 54 789 12','Lot Ter Ambohijanaka',0);
+insert into utilisateur(email,passwrd,username,idGenre,numero,adresse,isAdmin) values ('johary@gmail.com','johary','Johary17',1,'+261 34 78 546 12','Lot domaine Ampefiloha',0);
 
 create table detail_utilisateur(
     idUtilisateur int,
@@ -65,7 +65,7 @@ create table activite(
     nom varchar(50),
     quantite double,
     unite int,
-	foreign key (idUnite) references unite(idUnite)
+	foreign key (unite) references unite(idUnite)
 );
 insert into activite(nom,quantite,unite) values('Corde a saute',10,1);
 insert into activite(nom,quantite,unite) values('Footing',30,1);
@@ -102,8 +102,8 @@ create table plat(
 create table objectif_utilisateur(
     idObjectif int auto_increment primary key,
     type_objectif int,
-    minValue double,
-    maxValue double,
+    minvaleur double,
+    maxvaleur double,
     idRegime int,
 	foreign key (idRegime) references regime(idRegime)
 );
