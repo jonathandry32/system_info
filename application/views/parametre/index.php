@@ -1,3 +1,13 @@
+<style>
+  input{
+    border-color:lightgrey ;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    outline: none;
+    background-color: var(--background);
+  }
+</style>
 <main>
   <div class="container">
     <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
@@ -34,9 +44,13 @@
                 <div class="pt-4 pb-3">
                     <h5 class="card-title text-center pb-0 fs-4">Liste des parametres</h5>
                 </div>
-                    <table class="table">
+                
+                <div style="margin-bottom: 20px; background:transparent;">
+                    <input type="text" id="filter0" onkeyup="filter0()" placeholder="Filtrer par Nom">
+                </div>
+                    <table class="table"  id="filter">
                         <tr>
-                                <th>Nom</th>
+                                <th scope="col">Nom</th>
                                 <th>Modifier</th>
                                 <th>Supprimer</th>
                         </tr>
@@ -70,3 +84,4 @@
 
   </div>
 </main>
+<script src="<?php echo base_url('assets/js/filtrage.js'); ?>"></script>

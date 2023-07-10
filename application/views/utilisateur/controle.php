@@ -16,7 +16,7 @@
                   </p>
                 </div>
 
-                <form id="login" class="row g-3 needs-validation" method="post" action="">
+                <form id="login" class="row g-3 needs-validation" method="post" action="<?php echo site_url("Utilisateur/insertControle"); ?>">
                   
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-3 col-form-label">Poids </label>
