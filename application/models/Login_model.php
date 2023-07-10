@@ -39,7 +39,9 @@
             $this->db->insert('utilisateur',$requete);
 
             $idUtilisateur = $this->db->insert_id();
-            $requete=array('idUtilisateur'=>$idUtilisateur,'taille'=>$taille,'poids'=>$poids,'daty'=>now());
+            date_default_timezone_set('Europe/Moscow');
+            $currentDateTime = date('Y-m-d H:i:s');
+            $requete=array('idUtilisateur'=>$idUtilisateur,'taille'=>$taille,'poids'=>$poids,'daty'=>$currentDateTime);
             $this->db->insert('detail_utilisateur',$requete);
         }
     }
