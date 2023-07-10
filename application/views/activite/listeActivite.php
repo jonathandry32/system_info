@@ -16,14 +16,14 @@
             <br>
             <div class="row justify-content-center" style="background-color:whitesmoke;border-color:whitesmoke ">
                 <br>
-<body>
-    
-    <center style="margin-bottom: 20px; background:transparent;">
+                <div class="card mb-3">
+                <div class="card-body">
+    <center style="margin-top: 20px; background:transparent;">
             <input type="text" id="filter0" onkeyup="filter0()" placeholder="Filtrer par Activite">
             <input type="text" id="filter1" onkeyup="filter1()" placeholder="Filtrer par Quantite">
             <input type="text" id="filter2" onkeyup="filter2()" placeholder="Filtrer par Unite">
-</center>
-    <table class="table table-striped"   id="filter">
+    </center>
+    <table class="table table-borderless"   id="filter">
         <thead>
             <tr>
                 <th scope="col">Activite</th>
@@ -63,7 +63,8 @@
         </tbody>
     </table>
     <hr>
-</body>
+    </div>
+    </div>
 </div>
 </div>
 </section>
