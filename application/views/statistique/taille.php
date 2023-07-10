@@ -51,10 +51,22 @@
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+      labels: [
+        <?php
+          foreach($tailleData as $td){
+            echo "'".$td['daty']."',";
+          }  
+        ?>
+      ],
       datasets: [{
-        label: 'Taille',
-        data: [12, 19, 3, 5, 2, 3],
+        label: 'Taille (cm)',
+        data: [
+          <?php
+            foreach($tailleData as $td){
+              echo $td['taille'].",";
+            }  
+          ?>
+        ],
         borderWidth: 1
       }]
     },

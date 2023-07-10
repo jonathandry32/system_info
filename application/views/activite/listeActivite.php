@@ -1,3 +1,13 @@
+<style>
+  input{
+    border-color:lightgrey ;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    outline: none;
+    background-color: var(--background);
+  }
+</style>
 <main>
     <br>
 	<section class="section">
@@ -7,7 +17,13 @@
             <div class="row justify-content-center" style="background-color:whitesmoke;border-color:whitesmoke ">
                 <br>
 <body>
-    <table class="table table-striped">
+    
+    <center style="margin-bottom: 20px; background:transparent;">
+            <input type="text" id="filter0" onkeyup="filter0()" placeholder="Filtrer par Activite">
+            <input type="text" id="filter1" onkeyup="filter1()" placeholder="Filtrer par Quantite">
+            <input type="text" id="filter2" onkeyup="filter2()" placeholder="Filtrer par Unite">
+</center>
+    <table class="table table-striped"   id="filter">
         <thead>
             <tr>
                 <th scope="col">Activite</th>
