@@ -1,11 +1,13 @@
 <main>
   <div class="container">
-    <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+  </br>
+    <section class="section">
+    </br>
       <div class="container">
+      </br>
         <div class="row justify-content-center">
-          <div class="col-lg-6 col-md-6 d-flex flex-column align-items-center justify-content-center">
-
-            <div class="card mb-3" style="margin-top: 50px;">
+        </br>
+            <div class="card mb-3">
 
               <div class="card-body">
                 <div class="pt-4 pb-3">
@@ -14,6 +16,7 @@
                     <table class="table"  id="filter">
                         <tr>
                                 <th scope="col"> Utilisateur </th>
+                                <th scope="col"> Date </th>
                                 <th scope="col"> Code </th>
                                 <th scope="col"> Montant </th>
                                 <th>Valider</th>
@@ -21,10 +24,13 @@
                         <?php for($i=0;$i<count($list);$i++){ ?>
                             <tr>
                                 <td><?php echo $list[$i]['utilisateur']; ?></td>
+                                <td><?php echo $list[$i]['date']; ?></td>
                                 <td><?php echo $list[$i]['code']; ?></td>
                                 <td><?php echo $list[$i]['montant']; ?></td>
                                 <td>
                                     <form action="<?php echo base_url('Monnai/valider');?>" method="post">
+                                        <input type="hidden" name="idcode" value="<?php echo $list[$i]['idCode']; ?>">
+                                        <input type="hidden" name="montant" value="<?php echo $list[$i]['montant']; ?>">
                                         <button type="submit" class="btn btn-primary" style="color:white">Valider</button>
                                     </form>
                                 </td>
@@ -32,7 +38,6 @@
                         <?php } ?>
                     </table>
                 </div>
-            </div>
 
           </div>
         </div>

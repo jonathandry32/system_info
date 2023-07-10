@@ -16,7 +16,7 @@
                   </p>
                 </div>
 
-                <form id="login" class="row g-3 needs-validation" method="post" action="">
+                <form id="login" class="row g-3 needs-validation" method="post" action="<?php echo site_url("Objectif/prediction"); ?>">
                   
                 <div class="row mb-3">
                       <label class="col-sm-3 col-form-label"> Type objectif </label>

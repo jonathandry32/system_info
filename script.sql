@@ -121,6 +121,10 @@ create table objectif_utilisateur(
     type_objectif int,
     minvaleur double,
     maxvaleur double,
+    poidsmin double,
+    poidsmax double,
+    taillemin double,
+    taillemax double,
     idRegime int,
 	foreign key (idRegime) references regime(idRegime)
 );
@@ -147,7 +151,7 @@ create table parametre_utilisateur(
 create table regime_utilisateur(
     idRegimeUtilisateur int auto_increment primary key,
     idUtilisateur int,
-    idObjectif int,
+    idRegime int,
     debut Date,
     fin Date,
 	foreign key (idUtilisateur) references utilisateur(idUtilisateur)

@@ -15,5 +15,27 @@ class Objectif extends CI_Controller {
 		$data['contents']='objectif/newMethod';
 		$this->load->view('template',$data);
 	}
+
+	public function prediction()
+	{
+		$this->load->model('Objectif_model');
+		$data['title']='YourDiet';
+		$data['description']='';
+		$data['keywords']='';
+		$data['resultat']=$this->Objectif_model->predict($this->input->post('type_objectif'),$this->input->post('kg'),$this->input->post('poids'),$this->input->post('taille'));
+		$data['contents']='objectif/paiement';
+		$this->load->view('template',$data);
+	}
+	
+	public function payer()
+	{
+		$this->load->model('Objectif_model');
+		$data['title']='YourDiet';
+		$data['description']='';
+		$data['keywords']='';
+		$this->Objectif_model->payer();
+		$data['contents']='objectif/insert';
+		$this->load->view('template',$data);
+	}
 }
 ?>
