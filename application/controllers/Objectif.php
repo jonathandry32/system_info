@@ -27,7 +27,7 @@ class Objectif extends CI_Controller {
 		$kgg=$this->input->post('kg');
 		$uss=$this->Utilisateur_model->getUser();
 		if($this->input->post('type_objectif')==3){
-			$kgg=$this->IMC_model->getPoidsIdeal() - $uss['poids'];
+			$kgg=$this->IMC_model->getPoidsIdeal($this->input->post('taille')) - $uss['poids'];
 		}
 		if($kgg<0){
 			$kgg=(-1)*$kgg;
