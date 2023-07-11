@@ -219,8 +219,15 @@ insert into imc(minvaleur,maxvaleur,libelle) values(40,100,'Obesite morbide ou m
 
 create table gold(
     idGold int auto_increment primary key,
-    idUtilisateur int,
     remise double,
-    prix double,
-	foreign key (idUtilisateur) references utilisateur(idUtilisateur)
+    prix double
+);
+
+insert into gold(remise,prix) values (15,200000);
+
+create table utilisateur_gold(
+    idGold int,
+    idUtilisateur int,
+    foreign key(idGold) references gold(idGold),
+    foreign key (idUtilisateur) references utilisateur(idUtilisateur)
 );
