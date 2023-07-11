@@ -80,6 +80,14 @@ create table detail_regime(
 	foreign key (idRegime) references regime(idRegime)
 );
 
+create table repartition_regime(
+    idRegime int,
+    idCatPlat int,
+    valeur double,
+    foreign key (idRegime) references regime(idRegime),
+    foreign key (idCatPlat) references cat_plat(idCatPlat)
+);
+
 insert into detail_regime(idRegime,idPlat,idActivite) values (1,1,0);
 insert into detail_regime(idRegime,idPlat,idActivite) values (1,2,0);
 insert into detail_regime(idRegime,idPlat,idActivite) values (1,0,1);
