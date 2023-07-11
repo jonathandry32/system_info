@@ -6,11 +6,13 @@ class Regime extends CI_Controller {
     public function loadRegime(){
         $this->load->model('Plat_model');
         $this->load->model('Activite_model');
+        $this->load->model('Regime_model');
         $data['title']='YourDiet';
 		$data['description']='';
 		$data['keywords']='';
         $data['plats']= $this->Plat_model->listePlat();
         $data['activites']=$this->Activite_model->listeActivite();
+        $data['cat_plat']=$this->Regime_model->getCatPlat();
         $data['contents']='regime/insertRegime';
         $this->load->view('template',$data);
     }
@@ -20,9 +22,19 @@ class Regime extends CI_Controller {
         $duree= $this->input->post('duree');
         $prix= $this->input->post('prix');
         $this->load->model('Regime_model');
+        $repart=$this->Regime_model->getCatPlat();
+        $temp=0;
+        foreach($repart as $rep)
+        {
+            $temp+=$this->input->post($rep['nom']);
+        }
+        if($temp>100)
+        {
+            redirect('Regime/loadRegime');
+        }
         $plats= $this->input->post('plat');
         $activites = $this->input->post('activite');
-        $this->Regime_model->insertRegime($nom,$duree,$prix,$plats,$activites);
+        $this->Regime_model->insertRegime($nom,$duree,$prix,$plats,$activites,$_POST);
         redirect('Regime/listeRegime');
     }
 
