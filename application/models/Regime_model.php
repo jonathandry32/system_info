@@ -3,7 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Regime_model extends CI_Model
 {
-    public function insertRegime($nom,$duree,$prix,$plats,$activites){
+    public function insertRegime($nom,$duree,$prix,$plats,$activites,$data){
+        $repartition = $this->Regime_model->getCatPlat();
         $sql="INSERT INTO regime(nom,duree,prix) values (%s,%d,%d)";
         $sql=sprintf($sql,$this->db->escape($nom),$duree,$prix);
         $this->db->query($sql);
@@ -16,6 +17,11 @@ class Regime_model extends CI_Model
         for($i=0; $i<count($activites); $i++){
             $query2='INSERT INTO detail_regime(idRegime,idPlat,idActivite) values(%d,0,%d)';
             $query2=sprintf($query2,$idRegime,$activites[$i]);
+            $this->db->query($query2);
+        }
+        foreach($repartition as $rp)
+        {
+            $query2="INSERT INTO repartition_regime(idRegime,idCatPlat,valeur) values(".$idRegime.",".$this->Regime_model->getTheCatPlat($rp['nom']).",".$data[$rp['nom']].")";
             $this->db->query($query2);
         }
     }
@@ -96,5 +102,25 @@ class Regime_model extends CI_Model
         $pdf->activites($a);
         $pdf->SetFont('Times', '', 12);
         $pdf->Output();
+    }
+
+    public function getCatPlat()
+    {   
+        $sql="select*from cat_plat";
+        $query=$this->db->query($sql);
+        $results = $query->result_array();
+        return $results;
+    }
+
+    public function getTheCatPlat($nom)
+    {
+        $sql="select*from cat_plat where nom='".$nom."'";
+        $query=$this->db->query($sql);
+        $results = $query->result_array();
+        foreach($results as $res)
+        {
+            $valiny=$res['idCatPlat'];
+        }
+        return $valiny;
     }
 }

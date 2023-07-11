@@ -147,6 +147,52 @@
                     </div>
                 </div>          
             <br>
+
+                <div class="col-10">
+                <label class="col-sm-4 col-form-label">Pourcentage de viande</label>
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#basicModal32"
+                                            class="btn btn-primary"><i class="bi bi-plus-circle-fill"></i>
+                                            repartitionner</button>
+                </div>
+                  <!-- Basic Modal -->
+                  <div class="modal fade" id="basicModal32" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Repartition</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <?php
+                                    foreach($cat_plat as $cp)
+                                    { ?>
+                                        <div class="row mb-3">
+                                            <label for="inputText" class="col-sm-3 col-form-label"><?php echo $cp['nom'];?></label>
+                                            <div class="col-sm-9">
+                                            <input type="number" class="form-control" name="<?php echo $cp['nom'];?>" required>
+                                            </div>
+                                        </div>
+                                    <?php } 
+                                ?>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">Fermer</button>
+                                    <button type="button" class="btn btn-primary"
+                                    data-bs-dismiss="modal">Valider</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Basic Modal-->
+
+
+                <br>
+
+
+
+
             <center><button type="submit" class="btn btn-primary" >Ajouter</button></center>
             <hr>
         </form>

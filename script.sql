@@ -41,6 +41,7 @@ create table type_objectif(
 );
 insert into type_objectif(nom) values('Perdre du poids');
 insert into type_objectif(nom) values('Gagner du poids');
+insert into type_objectif(nom) values('Atteindre son IMC');
 
 create table regime(
     idRegime int auto_increment primary key,
