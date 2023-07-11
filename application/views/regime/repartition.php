@@ -8,9 +8,7 @@
       padding: 5px;
     }
   </style>
-  <h1>Tableau croisé</h1>
   <?php
-  // Données de test
   $pivotData = array(
     "Viande" => array(
       "Régime 1" => 10,
@@ -30,16 +28,28 @@
   );
   ?>
 
-  <table id="pivotTable">
+  <main>
+    <br>
+	<section class="section">
+        <br>
+		<div class="container">
+            <br>
+            <div class="row justify-content-center" style="background-color:whitesmoke;border-color:whitesmoke ">
+                <br>
+                <div class="card mb-3">
+                <div class="card-body">
+                <div class="pt-4 pb-3">
+                  <h5 class="card-title text-center pb-0 fs-4">Tableau croisé des repartitions de regimes</h5>
+                </div>
+                <table class="table table-borderless">
     <thead>
       <tr>
         <th>Catégorie</th>
         <?php
-        // Affiche les en-têtes de colonne pour les régimes
         if (!empty($pivotData)) {
           $regimes = array_keys(reset($pivotData));
           foreach ($regimes as $regime) {
-            echo "<th>$regime</th>";
+            echo "<th scope='col'>$regime</th>";
           }
         }
         ?>
@@ -47,7 +57,6 @@
     </thead>
     <tbody>
       <?php
-      // Affiche les données du tableau croisé
       if (!empty($pivotData)) {
         foreach ($pivotData as $categorie => $regimes) {
           echo "<tr>";
@@ -61,3 +70,12 @@
       ?>
     </tbody>
   </table>
+                <hr>
+            </div>
+            </div>
+</div>
+</div>
+</section>
+</main>
+<br>
+<script src="<?php echo base_url('assets/js/filtrage.js'); ?>"></script>

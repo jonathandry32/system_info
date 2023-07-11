@@ -93,5 +93,12 @@ class Regime extends CI_Controller {
 		$data['keywords']='';
         $this->load->view('template',$data);
     }
+    public function tableauC(){
+        $data['contents']='regime/repartition';
+        $data['title']='YourDiet';
+		$data['description']='';
+		$data['keywords']='';
+        $this->load->view('template',$data);
+    }
 
 }
