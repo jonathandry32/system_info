@@ -18,6 +18,19 @@ class Login extends CI_Controller {
 			$this->load->view('utilisateur/login',$data);
 		}
 	}
+    public function loginNonAdmin()
+    {
+		$data['title']='YourDiet';
+		$data['description']='';
+		$data['keywords']='';
+		if($this->session->userdata('online'))
+        {
+            $this->load->view('utilisateur/profil',$data);
+		}
+		else{
+			$this->load->view('utilisateur/login2',$data);
+		}
+	}
 
     public function check()
     {
