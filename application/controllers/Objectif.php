@@ -19,10 +19,20 @@ class Objectif extends CI_Controller {
 	public function prediction()
 	{
 		$this->load->model('Objectif_model');
+		$this->load->model('Utilisateur_model');
+		$this->load->model('IMC_model');
 		$data['title']='YourDiet';
 		$data['description']='';
 		$data['keywords']='';
-		$data['resultat']=$this->Objectif_model->predict($this->input->post('type_objectif'),$this->input->post('kg'),$this->input->post('poids'),$this->input->post('taille'));
+		$kgg=$this->input->post('kg');
+		$uss=$this->Utilisateur_model->getUser();
+		if($this->input->post('type_objectif')==3){
+			$kgg=$this->IMC_model->getPoidsIdeal($this->input->post('taille')) - $uss['poids'];
+		}
+		if($kgg<0){
+			$kgg=(-1)*$kgg;
+		}
+		$data['resultat']=$this->Objectif_model->predict($this->input->post('type_objectif'),$kgg,$this->input->post('poids'),$this->input->post('taille'));
 		$data['contents']='objectif/paiement';
 		$this->load->view('template',$data);
 	}

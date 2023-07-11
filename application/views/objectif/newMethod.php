@@ -37,7 +37,7 @@
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-3 col-form-label">Kilogramme </label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" name="kg" required>
+                      <input type="text" class="form-control" name="kg" placeholder="Non obligatoire si IMC" value="0" required>
                       <div class="invalid-feedback">Objectif poids obligatoire!</div>
                     </div>
                   </div>

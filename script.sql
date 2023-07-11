@@ -41,6 +41,7 @@ create table type_objectif(
 );
 insert into type_objectif(nom) values('Perdre du poids');
 insert into type_objectif(nom) values('Gagner du poids');
+insert into type_objectif(nom) values('Atteindre son IMC');
 
 create table regime(
     idRegime int auto_increment primary key,
@@ -80,6 +81,14 @@ create table detail_regime(
 	foreign key (idRegime) references regime(idRegime)
 );
 
+create table repartition_regime(
+    idRegime int,
+    idCatPlat int,
+    valeur double,
+    foreign key (idRegime) references regime(idRegime),
+    foreign key (idCatPlat) references cat_plat(idCatPlat)
+);
+
 insert into detail_regime(idRegime,idPlat,idActivite) values (1,1,0);
 insert into detail_regime(idRegime,idPlat,idActivite) values (1,2,0);
 insert into detail_regime(idRegime,idPlat,idActivite) values (1,0,1);
@@ -100,8 +109,9 @@ create table cat_plat(
     nom varchar(50)
 );
 
-insert into cat_plat(nom) values('Sucré');
-insert into cat_plat(nom) values('Salé');
+insert into cat_plat(nom) values('Viande');
+insert into cat_plat(nom) values('Poisson');
+insert into cat_plat(nom) values('Volaille');
 
 create table plat(
     idPlat int auto_increment primary key,
@@ -192,4 +202,32 @@ create table caisse(
     types varchar(10),
     daty Date,
 	foreign key (idUtilisateur) references utilisateur(idUtilisateur)
+);
+
+create table imc(
+    idIMC int auto_increment primary key,
+    minvaleur double,
+    maxvaleur double,
+    libelle varchar(50)
+);
+insert into imc(minvaleur,maxvaleur,libelle) values(0,18.5,'Insuffisance ponderale(maigreur)');
+insert into imc(minvaleur,maxvaleur,libelle) values(18.5,25,'Corpulence normale');
+insert into imc(minvaleur,maxvaleur,libelle) values(25,30,'Surpoids');
+insert into imc(minvaleur,maxvaleur,libelle) values(30,35,'Obesite moderee');
+insert into imc(minvaleur,maxvaleur,libelle) values(35,40,'Obesite severe');
+insert into imc(minvaleur,maxvaleur,libelle) values(40,100,'Obesite morbide ou massive');
+
+create table gold(
+    idGold int auto_increment primary key,
+    remise double,
+    prix double
+);
+
+insert into gold(remise,prix) values (15,200000);
+
+create table utilisateur_gold(
+    idGold int,
+    idUtilisateur int,
+    foreign key(idGold) references gold(idGold),
+    foreign key (idUtilisateur) references utilisateur(idUtilisateur)
 );
