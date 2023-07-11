@@ -216,3 +216,11 @@ insert into imc(minvaleur,maxvaleur,libelle) values(25,30,'Surpoids');
 insert into imc(minvaleur,maxvaleur,libelle) values(30,35,'Obesite moderee');
 insert into imc(minvaleur,maxvaleur,libelle) values(35,40,'Obesite severe');
 insert into imc(minvaleur,maxvaleur,libelle) values(40,100,'Obesite morbide ou massive');
+
+create table gold(
+    idGold int auto_increment primary key,
+    idUtilisateur int,
+    remise double,
+    prix double,
+	foreign key (idUtilisateur) references utilisateur(idUtilisateur)
+);
