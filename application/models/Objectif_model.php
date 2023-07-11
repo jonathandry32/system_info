@@ -14,11 +14,22 @@ class Objectif_model extends CI_Model
     {   
         $sql="select r.idRegime,r.nom,r.prix from objectif_utilisateur ou join regime r on ou.idRegime=r.idRegime where type_objectif=".$typeObj." and minvaleur<".$kg." and maxvaleur>".$kg." and poidsmin<".$poids." and poidsmax>".$poids." and taillemin<".$taille." and taillemax>".$taille;
         $query=$this->db->query($sql);
+        $this->load->model('Gold_model');
         $results = $query->result_array();
+        $gold= $this->Gold_model->getLastGold();
+        $isGold=$this->Gold_model->isGold();
+        if($isGold != null){
+            $re=0;
+            foreach($results as $r){
+                $results[$re]['prix']=$r['prix']-($r['prix']*$gold['remise']/100);
+                $re++;
+            }
+        }
         return $results;
     }
     public function payer($joursAajouter,$valeur,$idRegime){
         $this->load->model('Monnai_model');
+        $this->load->model('Gold_model');
         if($this->Monnai_model->portefeuille()<$valeur){
             redirect('Monnai/index');
         }
