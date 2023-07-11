@@ -201,3 +201,16 @@ create table caisse(
     daty Date,
 	foreign key (idUtilisateur) references utilisateur(idUtilisateur)
 );
+
+create table imc(
+    idIMC int auto_increment primary key,
+    minvaleur double,
+    maxvaleur double,
+    libelle varchar(50)
+);
+insert into imc(minvaleur,maxvaleur,libelle) values(0,18.5,'Insuffisance ponderale(maigreur)');
+insert into imc(minvaleur,maxvaleur,libelle) values(18.5,25,'Corpulence normale');
+insert into imc(minvaleur,maxvaleur,libelle) values(25,30,'Surpoids');
+insert into imc(minvaleur,maxvaleur,libelle) values(30,35,'Obesite moderee');
+insert into imc(minvaleur,maxvaleur,libelle) values(35,40,'Obesite severe');
+insert into imc(minvaleur,maxvaleur,libelle) values(40,100,'Obesite morbide ou massive');
