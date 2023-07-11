@@ -108,8 +108,9 @@ create table cat_plat(
     nom varchar(50)
 );
 
-insert into cat_plat(nom) values('Sucré');
-insert into cat_plat(nom) values('Salé');
+insert into cat_plat(nom) values('Viande');
+insert into cat_plat(nom) values('Poisson');
+insert into cat_plat(nom) values('Volaille');
 
 create table plat(
     idPlat int auto_increment primary key,
