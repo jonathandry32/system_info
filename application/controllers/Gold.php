@@ -8,6 +8,7 @@ class Gold extends CI_Controller {
         $this->load->model('Regime_model');
         $data['list']= $this->Regime_model->listeRegime();
         $data['gold']=$this->Gold_model->getLastGold();
+        $data['isGold']=$this->Gold_model->isGold();
         $data['title']='YourDiet';
 		$data['description']='';
 		$data['keywords']='';

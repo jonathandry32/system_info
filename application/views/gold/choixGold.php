@@ -8,6 +8,12 @@
             <div class="row justify-content-center" style="background-color:whitesmoke;border-color:whitesmoke ">
                 <br>
 <body>
+<?php if($isGold != null){ ?>
+    <h3 class="card-title text-center pb-0 fs-4">Vous êtes souscrit à l'offre GOLD</h3>
+    <h5 class="card-title text-center pb-0 fs-4">Prix: <?php echo $gold['prix']; ?> Ar</h5>
+    <h5 class="card-title text-center pb-0 fs-4">Remise <?php echo $gold['remise']; ?> % sur tous les régimes</h5>
+<?php } ?>
+<?php if($isGold == null){ ?>
 <form class="row g-3 needs-validation" action="<?php echo base_url('Gold/choose');?>" method="POST" novalidate>
 <div class="pt-8">
 <h3 class="card-title text-center pb-0 fs-4">Gold</h3>
@@ -38,6 +44,7 @@
     <hr>
     <center><button type="submit" class="btn btn-primary" >Payer</button></center>
     </form>
+    <?php } ?>
 </body>
 </div>
 </div>
