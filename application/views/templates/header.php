@@ -136,7 +136,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link collapsed"  href="<?php echo base_url("IMC/index"); ?>">
+                    <a class="nav-link collapsed"  href="<?php echo base_url("Gold/index"); ?>">
                         <i class="bi bi-person-circle"></i><span> GOLD </span>
                     </a>
                 </li>
