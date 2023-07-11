@@ -36,7 +36,6 @@
 
             <div class="d-flex align-items-center justify-content-between">
                 <a href="#" class="logo d-flex align-items-center">
-                    <img src="<?php echo base_url('assets/file/img/'.$this->session->userdata('sary').''); ?>" alt="">
                     <span class="d-none d-lg-block">
                         <h4 style="margin-left: 10px; padding-top: 10px;"><?php echo $title; ?></h4>
                     </span>
@@ -65,8 +64,7 @@
 
                         <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#"
                             data-bs-toggle="dropdown">
-                            <img src="<?php echo base_url('assets/file/img/'.$this->session->userdata('sary').''); ?>" alt="Profil"
-                                class="rounded-circle">
+                            Deconnexion
                             <span class="d-none d-md-block dropdown-toggle ps-2">
                                 <?php ?>
                             </span>
