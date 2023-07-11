@@ -1,4 +1,10 @@
-
+<style>
+    .image {
+        width: 200px; /* Modifier la largeur selon vos besoins */
+        height: auto; /* Permet de maintenir le ratio d'aspect */
+        border-radius: 10px; /* Ajoute une bordure arrondie */
+    }
+</style>
 <main>
     <br>
 	<section class="section">
@@ -32,7 +38,7 @@
             for ($i = 0; $i < count($plats); $i++) {
             ?>
                 <tr>
-                    <td><img src="<?php echo base_url('assets/file/img'.$plats[$i]['picture'].''); ?>"></td>
+                    <td><img class="image" src="<?php echo base_url('assets/file/'.$plats[$i]['picture'].''); ?>"></td>
                     <td><?php echo $plats[$i]['plat']; ?></td>
                     <td><?php echo $plats[$i]['types']; ?></td>
                     <td><?php echo $plats[$i]['categ']; ?> </td>
