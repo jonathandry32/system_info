@@ -30,7 +30,7 @@ class Statistique extends CI_Controller {
 		$data['title']='YourDiet';
 		$data['description']='';
 		$data['keywords']='';
-		$data['financeData']=$this->Statistique_model->getPoids();
+		$data['financeData']=$this->Statistique_model->getFinance();
 		$data['contents']='statistique/finance';
 		$this->load->view('template',$data);
 	}

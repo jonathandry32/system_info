@@ -5,8 +5,8 @@ class IMC extends CI_Controller {
 
     public function index($imc=0){
         $this->load->model('IMC_model');
-            $data['imc']=$imc;
-            $data['pourcentages']=$this->IMC_model->pourcentages();
+        $data['imc']=$imc;
+        $data['pourcentages']=$this->IMC_model->pourcentages();
         $data['title']='YourDiet';
 		$data['description']='';
 		$data['keywords']='';
