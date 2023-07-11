@@ -90,7 +90,6 @@
                                             <tr>
                                                 <th scope="col">Plat</th>
                                                 <th scope="col">Type</th>
-                                                <th scope="col">Categorie</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -100,7 +99,6 @@
                                                 <tr>
                                                     <td><?php echo $plats[$i]['plat']; ?></td>
                                                     <td><?php echo $plats[$i]['types']; ?></td>
-                                                    <td><?php echo $plats[$i]['categ']; ?> </td>
                                                 </tr>
                                             <?php
                                             }

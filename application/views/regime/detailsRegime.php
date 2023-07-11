@@ -21,7 +21,7 @@
                                             $temp=$p;
                                         }
                                 ?>
-<h3 class="card-title text-center pb-0 fs-4">Régime: <?php echo $temp['reg'] ; ?></h3>
+<h3 class="card-title text-center pb-0 fs-4">Régime: <?php echo $plats[0]['reg'] ; ?></h3>
 </br>
 <h5 class="card-title text-center pb-0 fs-4">Plats contenus</h5>
     <table class="table table-striped"   id="filter">
@@ -30,7 +30,6 @@
                 <th> </th>
                 <th scope="col">Plat</th>
                 <th scope="col">Type</th>
-                <th scope="col">Categorie</th>
             </tr>
         </thead>
         <tbody>
@@ -41,7 +40,6 @@
                     <td><img class="image" src="<?php echo base_url('assets/file/'.$plats[$i]['picture'].''); ?>"></td>
                     <td><?php echo $plats[$i]['plat']; ?></td>
                     <td><?php echo $plats[$i]['types']; ?></td>
-                    <td><?php echo $plats[$i]['categ']; ?> </td>
                 </tr>
             <?php
             }

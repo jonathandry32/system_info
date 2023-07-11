@@ -48,7 +48,7 @@ class Regime_model extends CI_Model
     }
 
     public function getDetailsPlats($idRegime){
-        $sql='SELECT distinct r.nom as reg,r.duree,r.prix,p.nom as plat,p.picture,tp.nom as types,cp.nom as categ FROM detail_regime dr join regime r on dr.idRegime=r.idRegime join plat p on dr.idPlat=p.idPlat join type_plat tp on tp.idTypePlat=p.idTypePlat join detail_plat dp on dp.idPlat=p.idPlat join cat_plat cp on cp.idCatPlat=dp.idCatPlat where r.idRegime=%d';
+        $sql='SELECT distinct r.nom as reg,r.duree,r.prix,p.nom as plat,p.picture,tp.nom as types FROM detail_regime dr join regime r on dr.idRegime=r.idRegime join plat p on dr.idPlat=p.idPlat join type_plat tp on tp.idTypePlat=p.idTypePlat where r.idRegime=%d';
         $sql=sprintf($sql,$idRegime);
         $data=array();
         $sql=$this->db->query($sql);
@@ -144,3 +144,4 @@ class Regime_model extends CI_Model
         return $pivotData;
     }
 }
+
