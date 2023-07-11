@@ -18,7 +18,7 @@ class Login extends CI_Controller {
 			$this->load->view('utilisateur/login',$data);
 		}
 	}
-    public function loginNonAdmin()
+    public function login2()
     {
 		$data['title']='YourDiet';
 		$data['description']='';
