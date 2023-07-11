@@ -165,6 +165,13 @@
                         <span>Liste Regime</span>
                     </a>
                 </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="<?php echo base_url("Regime/tableauC"); ?>">
+                        <i class="bi bi-building"></i>
+                        <span>Tableau croisé répartition dans régime </span>
+                    </a>
+                </li>
 
                 <li class="nav-heading">Back Office (Admin)</li>
                 <?php 

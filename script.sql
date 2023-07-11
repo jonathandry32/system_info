@@ -21,11 +21,7 @@ create table utilisateur(
 );
 
 -- admin 1 oui 0 non
-insert into utilisateur(email,passwrd,username,idGenre,numero,adresse,isAdmin) values ('Admin@admin.net','root','Administrateur',1,'+261 20 22 456 12','Local',1);
-insert into utilisateur(email,passwrd,username,idGenre,numero,adresse,isAdmin) values ('lol@bot.io','lol','Bot',2,'+261 34 52 558 91','Lot Iv 7 Ivato',0);
-insert into utilisateur(email,passwrd,username,idGenre,numero,adresse,isAdmin) values ('jonathan@gmail.com','jonathan','Jonathandry32',1,'+261 33 125 78','Lot II C 1AC Manjakaray',0);
-insert into utilisateur(email,passwrd,username,idGenre,numero,adresse,isAdmin) values ('koloina@gmail.com','koloina','Koloina06',2,'+261 32 54 789 12','Lot Ter Ambohijanaka',0);
-insert into utilisateur(email,passwrd,username,idGenre,numero,adresse,isAdmin) values ('johary@gmail.com','johary','Johary17',1,'+261 34 78 546 12','Lot domaine Ampefiloha',0);
+insert into utilisateur(email,passwrd,username,idGenre,numero,adresse,dtn,isAdmin) values ('Admin@admin.net','root','Administrateur',1,'+261 20 22 456 12','Local','2000-10-10',1);
 
 create table detail_utilisateur(
     idUtilisateur int,
@@ -34,6 +30,7 @@ create table detail_utilisateur(
     daty Date,
 	foreign key (idUtilisateur) references utilisateur(idUtilisateur)
 );
+insert into detail_utilisateur values(1,170,60,now());
 
 create table type_objectif(
     idTypeObjectif int auto_increment primary key,
@@ -49,9 +46,6 @@ create table regime(
     duree double,
     prix double
 );
-insert into regime(nom,duree) values('Startup',7);
-insert into regime(nom,duree) values('Basique',14);
-insert into regime(nom,duree) values('Rapide',30);
 
 create table unite(
     idUnite int auto_increment primary key,
@@ -81,13 +75,6 @@ create table detail_regime(
 	foreign key (idRegime) references regime(idRegime)
 );
 
-
-insert into detail_regime(idRegime,idPlat,idActivite) values (1,1,0);
-insert into detail_regime(idRegime,idPlat,idActivite) values (1,2,0);
-insert into detail_regime(idRegime,idPlat,idActivite) values (1,0,1);
-insert into detail_regime(idRegime,idPlat,idActivite) values (1,0,2);
-insert into detail_regime(idRegime,idPlat,idActivite) values (1,0,3);
-
 create table type_plat(
     idTypePlat int auto_increment primary key,
     nom varchar(50)
@@ -101,7 +88,6 @@ create table cat_plat(
     idCatPlat int auto_increment primary key,
     nom varchar(50)
 );
-
 insert into cat_plat(nom) values('Viande');
 insert into cat_plat(nom) values('Poisson');
 insert into cat_plat(nom) values('Volaille');
@@ -115,22 +101,12 @@ create table plat(
 	foreign key (idTypePlat) references type_plat(idTypePlat)
 );
 
-insert into plat(nom,idTypePlat,prix,picture) values ('salade',2,12000,'soupe.jpg');
-insert into plat(nom,idTypePlat,prix,picture) values ('croissant',1,3000,'soupe.jpg');
-insert into plat(nom,idTypePlat,prix,picture) values ('soupe',4,15000,'soupe.jpg');
-insert into plat(nom,idTypePlat,prix,picture) values ('brownies',3,6000,'soupe.jpg');
-
 create table detail_plat(
     idPlat int,
     idCatPlat int,
 	foreign key (idPlat) references plat(idPlat),
 	foreign key (idCatPlat) references cat_plat(idCatPlat)
 );
-
-insert into detail_plat(idPlat,idCatPlat) values (1,2);
-insert into detail_plat(idPlat,idCatPlat) values (2,1);
-insert into detail_plat(idPlat,idCatPlat) values (3,2);
-insert into detail_plat(idPlat,idCatPlat) values (4,1);
 
 create table objectif_utilisateur(
     idObjectif int auto_increment primary key,
