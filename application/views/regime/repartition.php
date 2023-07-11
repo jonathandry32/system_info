@@ -8,26 +8,6 @@
       padding: 5px;
     }
   </style>
-  <?php
-  $pivotData = array(
-    "Viande" => array(
-      "Régime 1" => 10,
-      "Régime 2" => 20,
-      "Régime 3" => 30
-    ),
-    "Poisson" => array(
-      "Régime 1" => 40,
-      "Régime 2" => 50,
-      "Régime 3" => 60
-    ),
-    "Volaille" => array(
-      "Régime 1" => 70,
-      "Régime 2" => 80,
-      "Régime 3" => 90
-    )
-  );
-  ?>
-
   <main>
     <br>
 	<section class="section">
@@ -46,8 +26,8 @@
       <tr>
         <th>Catégorie</th>
         <?php
-        if (!empty($pivotData)) {
-          $regimes = array_keys(reset($pivotData));
+        if (!empty($dataTC)) {
+          $regimes = array_keys(reset($dataTC));
           foreach ($regimes as $regime) {
             echo "<th scope='col'>$regime</th>";
           }
@@ -57,8 +37,8 @@
     </thead>
     <tbody>
       <?php
-      if (!empty($pivotData)) {
-        foreach ($pivotData as $categorie => $regimes) {
+      if (!empty($dataTC)) {
+        foreach ($dataTC as $categorie => $regimes) {
           echo "<tr>";
           echo "<th>$categorie</th>";
           foreach ($regimes as $valeur) {
@@ -78,4 +58,3 @@
 </section>
 </main>
 <br>
-<script src="<?php echo base_url('assets/js/filtrage.js'); ?>"></script>

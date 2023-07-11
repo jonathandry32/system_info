@@ -123,4 +123,24 @@ class Regime_model extends CI_Model
         }
         return $valiny;
     }
+    public function getDataTC() {
+        $this->db->select('cp.nom AS categorie, r.nom AS regime, rr.valeur');
+        $this->db->from('repartition_regime rr');
+        $this->db->join('cat_plat cp', 'cp.idCatPlat = rr.idCatPlat');
+        $this->db->join('regime r', 'r.idRegime = rr.idRegime');
+        $query = $this->db->get();
+        $pivotData = array();
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $categorie = $row->categorie;
+                $regime = $row->regime;
+                $valeur = $row->valeur;
+                if (!isset($pivotData[$categorie])) {
+                    $pivotData[$categorie] = array();
+                }
+                $pivotData[$categorie][$regime] = $valeur;
+            }
+        }
+        return $pivotData;
+    }
 }
