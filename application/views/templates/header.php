@@ -131,6 +131,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/profil"); ?>">
+                        <i class="bi bi-person-circle"></i><span> IMC </span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/controle"); ?>">
                         <i class="bi bi-house"></i><span> Contrôle </span>
                     </a>
