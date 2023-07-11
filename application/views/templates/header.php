@@ -136,6 +136,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link collapsed"  href="<?php echo base_url("IMC/index"); ?>">
+                        <i class="bi bi-person-circle"></i><span> GOLD </span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/controle"); ?>">
                         <i class="bi bi-house"></i><span> Contrôle </span>
                     </a>
