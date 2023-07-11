@@ -101,7 +101,7 @@
         <!-- ======= Sidebar ======= -->
         <aside id="sidebar" class="sidebar">
             <ul class="sidebar-nav" id="sidebar-nav">
-                <li class="nav-heading">General</li>
+                <li class="nav-heading">Front office</li>
 
                 <li class="nav-item">
                     <a class="nav-link collapsed" data-bs-target="#etatf" data-bs-toggle="collapse" href="#">
@@ -132,12 +132,12 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link collapsed"  href="<?php echo base_url("IMC/index"); ?>">
-                        <i class="bi bi-person-circle"></i><span> IMC </span>
+                        <i class="bi bi-graph-down"></i><span> IMC </span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link collapsed"  href="<?php echo base_url("Gold/index"); ?>">
-                        <i class="bi bi-person-circle"></i><span> GOLD </span>
+                        <i class="bi bi-award"></i><span> GOLD </span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -166,7 +166,7 @@
                     </a>
                 </li>
 
-                <li class="nav-heading">Admin</li>
+                <li class="nav-heading">Back Office (Admin)</li>
                 <?php 
                 if($this->session->has_userdata('isAdmin')){ ?>
 
