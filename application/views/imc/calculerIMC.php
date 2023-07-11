@@ -33,7 +33,7 @@
     </div>
 
     <?php if(isset($imc)) { ?>
-        <p>Votre IMC: <?php echo $imc ; ?>
+        <center><h3>Votre IMC: <?php echo $imc ; ?></h3></center>
         <table class="table table-hover">
             <th>Indice de masse corporelle(IMC)</th>
             <th>Interprétation selon l'OMS</th>
