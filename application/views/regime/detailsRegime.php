@@ -21,6 +21,7 @@
     <table class="table table-striped"   id="filter">
         <thead>
             <tr>
+                <th> </th>
                 <th scope="col">Plat</th>
                 <th scope="col">Type</th>
                 <th scope="col">Categorie</th>
@@ -31,6 +32,7 @@
             for ($i = 0; $i < count($plats); $i++) {
             ?>
                 <tr>
+                    <td><img src="<?php echo base_url('assets/file/img'.$plats[$i]['picture'].''); ?>"></td>
                     <td><?php echo $plats[$i]['plat']; ?></td>
                     <td><?php echo $plats[$i]['types']; ?></td>
                     <td><?php echo $plats[$i]['categ']; ?> </td>
