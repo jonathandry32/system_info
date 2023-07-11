@@ -48,7 +48,7 @@ class Regime_model extends CI_Model
     }
 
     public function getDetailsPlats($idRegime){
-        $sql='SELECT distinct r.nom as reg,r.duree,r.prix,p.nom as plat,tp.nom as types,cp.nom as categ FROM detail_regime dr join regime r on dr.idRegime=r.idRegime join plat p on dr.idPlat=p.idPlat join type_plat tp on tp.idTypePlat=p.idTypePlat join detail_plat dp on dp.idPlat=p.idPlat join cat_plat cp on cp.idCatPlat=dp.idCatPlat where r.idRegime=%d';
+        $sql='SELECT distinct r.nom as reg,r.duree,r.prix,p.nom as plat,p.picture,tp.nom as types,cp.nom as categ FROM detail_regime dr join regime r on dr.idRegime=r.idRegime join plat p on dr.idPlat=p.idPlat join type_plat tp on tp.idTypePlat=p.idTypePlat join detail_plat dp on dp.idPlat=p.idPlat join cat_plat cp on cp.idCatPlat=dp.idCatPlat where r.idRegime=%d';
         $sql=sprintf($sql,$idRegime);
         $data=array();
         $sql=$this->db->query($sql);
@@ -122,5 +122,25 @@ class Regime_model extends CI_Model
             $valiny=$res['idCatPlat'];
         }
         return $valiny;
+    }
+    public function getDataTC() {
+        $this->db->select('cp.nom AS categorie, r.nom AS regime, rr.valeur');
+        $this->db->from('repartition_regime rr');
+        $this->db->join('cat_plat cp', 'cp.idCatPlat = rr.idCatPlat');
+        $this->db->join('regime r', 'r.idRegime = rr.idRegime');
+        $query = $this->db->get();
+        $pivotData = array();
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $categorie = $row->categorie;
+                $regime = $row->regime;
+                $valeur = $row->valeur;
+                if (!isset($pivotData[$categorie])) {
+                    $pivotData[$categorie] = array();
+                }
+                $pivotData[$categorie][$regime] = $valeur;
+            }
+        }
+        return $pivotData;
     }
 }
