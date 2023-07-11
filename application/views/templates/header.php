@@ -131,7 +131,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link collapsed"  href="<?php echo base_url("Utilisateur/profil"); ?>">
+                    <a class="nav-link collapsed"  href="<?php echo base_url("IMC/index"); ?>">
                         <i class="bi bi-person-circle"></i><span> IMC </span>
                     </a>
                 </li>
