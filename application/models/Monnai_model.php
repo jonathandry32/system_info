@@ -55,12 +55,12 @@
 
         public function getValidation()
         {   
-            $sql="SELECT validation_code.idCode,utilisateur.username AS utilisateur, validation_code.daty AS date, code.code, code.valeur AS montant FROM validation_code JOIN utilisateur ON validation_code.idUtilisateur = utilisateur.idUtilisateur JOIN code ON validation_code.idCode = code.idCode";
+            $sql="SELECT validation_code.idUtilisateur,validation_code.idCode,utilisateur.username AS utilisateur, validation_code.daty AS date, code.code, code.valeur AS montant FROM validation_code JOIN utilisateur ON validation_code.idUtilisateur = utilisateur.idUtilisateur JOIN code ON validation_code.idCode = code.idCode";
             $query=$this->db->query($sql);
             $results = $query->result_array();
             return $results;
         }
-        public function valider($code,$valeur)
+        public function valider($code,$valeur,$idUsere)
         {   
             $sql="UPDATE code set utilisable=11 where idCode=".$code;
             $this->db->query($sql);
@@ -68,7 +68,7 @@
             $this->db->query($sql1);
             date_default_timezone_set('Europe/Moscow');
             $currentDateTime = date('Y-m-d H:i:s');
-            $requete=array('idUtilisateur'=>$this->session->userdata('online'),
+            $requete=array('idUtilisateur'=>$idUsere,
                 'valeur'=>$valeur,
                 'types'=>"entre",
                 'daty'=>$currentDateTime
