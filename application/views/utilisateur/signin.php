@@ -38,82 +38,140 @@
                 </div>
 
                 <form id="login" class="row g-3 needs-validation" method="post" action="<?php echo site_url("Login/inscription"); ?>" novalidate>
+                
+                <div class="col-12">
+                  <button type="button" data-bs-toggle="modal" data-bs-target="#basicModal"
+                                        class="btn btn-success rounded-pill w-100 mb-3"><i class="bi bi-plus-circle-fill"></i>
+                                        Informations de l'utilisateur</button>
+                  </div>
+                  <!-- Basic Modal -->
+                  <div class="modal fade" id="basicModal" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Informations de santé</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="row mb-3">
+                                  <label for="inputText" class="col-sm-3 col-form-label">Adresse mail</label>
+                                  <div class="col-sm-9">
+                                    <input type="email" class="form-control" name="email" required>
+                                    <div class="invalid-feedback">Please enter your Email!</div>
+                                  </div>
+                              </div>
+                              <div class="row mb-3">
+                                  <label for="inputText" class="col-sm-3 col-form-label">Mot de passe</label>
+                                  <div class="col-sm-9">
+                                    <input type="password" class="form-control" name="pass" required>
+                                    <div class="invalid-feedback">Please enter your Password!</div>
+                                  </div>
+                              </div>
+                              <div class="row mb-3">
+                                  <label for="inputText" class="col-sm-3 col-form-label">Nom d'utilisateur</label>
+                                  <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="username" required>
+                                    <div class="invalid-feedback">Please enter your Username!</div>
+                                  </div>
+                              </div>
+                              <div class="row mb-3">
+                                  <label class="col-sm-3 col-form-label">Genre</label>
+                                  <div class="col-sm-9">
+                                    <select class="form-select" aria-label="Default select example" name="idGenre">
+                                        <?php
+                                        foreach($genre as $g) 
+                                        {
+                                            ?>
+                                                <option value="<?php echo $g['idGenre'];?>"><?php echo $g['nom'];?></option>
+                                            <?php
+                                        }
+                                        ?>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="row mb-3">
+                                  <label for="inputText" class="col-sm-3 col-form-label">Numero de telephone</label>
+                                  <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="tel" required>
+                                    <div class="invalid-feedback">Please enter your Number!</div>
+                                  </div>
+                                </div>
+                                <div class="row mb-3">
+                                  <label for="inputText" class="col-sm-3 col-form-label">Adresse</label>
+                                  <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="adresse" required>
+                                    <div class="invalid-feedback">Please enter your Adresse!</div>
+                                  </div>
+                                </div>
+                                <div class="row mb-3">
+                                  <label for="inputText" class="col-sm-3 col-form-label">Date de naissance</label>
+                                  <div class="col-sm-9">
+                                    <input type="date" class="form-control" name="dtn" required>
+                                    <div class="invalid-feedback">Please enter your Birthday!</div>
+                                  </div>
+                                </div>
 
-                  <div class="row mb-3">
-                    <label for="inputText" class="col-sm-3 col-form-label">Adresse mail</label>
-                    <div class="col-sm-9">
-                      <input type="email" class="form-control" name="email" required>
-                      <div class="invalid-feedback">Please enter your Email!</div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">Fermer</button>
+                                    <button type="button" class="btn btn-primary"
+                                    data-bs-dismiss="modal">Valider</button>
+                            </div>
+                        </div>
                     </div>
+                </div>
+                <!-- End Basic Modal-->
+
+
+
+
+                  <div class="col-12">
+                  <button type="button" data-bs-toggle="modal" data-bs-target="#basicModal1"
+                                        class="btn btn-success rounded-pill w-100 mb-3"><i class="bi bi-plus-circle-fill"></i>
+                                        Informations de santé</button>
                   </div>
-                  <div class="row mb-3">
-                    <label for="inputText" class="col-sm-3 col-form-label">Mot de passe</label>
-                    <div class="col-sm-9">
-                      <input type="password" class="form-control" name="pass" required>
-                      <div class="invalid-feedback">Please enter your Password!</div>
+                  <!-- Basic Modal -->
+                  <div class="modal fade" id="basicModal1" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Informations de santé</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="row mb-3">
+                                  <label for="inputText" class="col-sm-3 col-form-label">Taille</label>
+                                  <div class="col-sm-9">
+                                    <input type="number" class="form-control" name="taille" required>
+                                    <div class="invalid-feedback">Please enter your Size!</div>
+                                  </div>
+                              </div>
+                              <div class="row mb-3">
+                                  <label for="inputText" class="col-sm-3 col-form-label">Poids</label>
+                                  <div class="col-sm-9">
+                                    <input type="number" class="form-control" name="poids" required>
+                                    <div class="invalid-feedback">Please enter your Weight!</div>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">Fermer</button>
+                                    <button type="button" class="btn btn-primary"
+                                    data-bs-dismiss="modal">Valider</button>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <div class="row mb-3">
-                    <label for="inputText" class="col-sm-3 col-form-label">Nom d'utilisateur</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" name="username" required>
-                      <div class="invalid-feedback">Please enter your Username!</div>
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                      <label class="col-sm-3 col-form-label">Genre</label>
-                      <div class="col-sm-9">
-                        <select class="form-select" aria-label="Default select example" name="idGenre">
-                            <?php
-                            foreach($genre as $g) 
-                            {
-                                ?>
-                                    <option value="<?php echo $g['idGenre'];?>"><?php echo $g['nom'];?></option>
-                                <?php
-                            }
-                            ?>
-                        </select>
-                      </div>
-                  </div>
-                  <div class="row mb-3">
-                    <label for="inputText" class="col-sm-3 col-form-label">Numero de telephone</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" name="tel" required>
-                      <div class="invalid-feedback">Please enter your Number!</div>
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                    <label for="inputText" class="col-sm-3 col-form-label">Adresse</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" name="adresse" required>
-                      <div class="invalid-feedback">Please enter your Adresse!</div>
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                    <label for="inputText" class="col-sm-3 col-form-label">Date de naissance</label>
-                    <div class="col-sm-9">
-                      <input type="date" class="form-control" name="dtn" required>
-                      <div class="invalid-feedback">Please enter your Birthday!</div>
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                    <label for="inputText" class="col-sm-3 col-form-label">Taille</label>
-                    <div class="col-sm-9">
-                      <input type="number" class="form-control" name="taille" required>
-                      <div class="invalid-feedback">Please enter your Size!</div>
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                    <label for="inputText" class="col-sm-3 col-form-label">Poids</label>
-                    <div class="col-sm-9">
-                      <input type="number" class="form-control" name="poids" required>
-                      <div class="invalid-feedback">Please enter your Weight!</div>
-                    </div>
-                  </div>
+                </div>
+                <!-- End Basic Modal-->
 
                 <div class="col-6">
                   <button class="btn btn-secondary w-100" type="reset">Annuler</button>
                 </div>
+
                 <div class="col-6">
                   <button class="btn btn-primary w-100 " type="submit">Save</button>
                 </div>
